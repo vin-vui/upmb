@@ -9,13 +9,15 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=averia-gruesa-libre:400" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=annie-use-your-telescope:400" rel="stylesheet" />
 
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased scroll-smooth">
         @inertia
     </body>
 </html>

@@ -16,6 +16,13 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                averia: ['Averia Gruesa Libre'],
+                annie: ['Annie Use Your Telescope'],
+            },
+            colors: {
+                primary: '#A3D5FF', // Bleu clair
+                secondary: '#FFC1CC', // Rose pâle
+                accent: '#C8E6C9', // Vert pâle
             },
         },
     },

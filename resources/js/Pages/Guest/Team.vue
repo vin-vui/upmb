@@ -4,7 +4,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 
 <template>
     <GuestLayout title="Notre Équipe">
-        <div id="section-one" class="relative text-3xl sm:text-6xl -mb-6 ml-4 mt-8 mr-3 font-averia">Une équipe<span class="bg-accent rounded-lg px-4 inline-block">pluridisciplinaire</span></div>
+        <div id="section-one" class="relative text-3xl sm:text-6xl -mb-6 ml-4 mt-8 mr-3 font-averia">Une équipe<span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">pluridisciplinaire</span></div>
         <div class="md:p-4 p-2 rounded-3xl border-2 border-accent">
             <div class="relative">
                 <div class="relative bg-white rounded-2xl py-4 lg:py-10 px-4 lg:px-10">

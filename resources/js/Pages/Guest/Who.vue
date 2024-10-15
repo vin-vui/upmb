@@ -8,8 +8,8 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
             <div class="flex flex-wrap -m-4">
                 <div class="w-full md:w-2/3 p-4">
                     <div class="h-full py-18 lg:py-32 pl-4 lg:pl-18 pr-4 lg:pr-16">
-                        <h1 class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl">
-                            <span class="relative z-10">Pour quels</span><span class="bg-accent rounded-lg px-4 inline-block">bébés</span> ?
+                        <h1 class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl text-balance">
+                            <span class="relative z-10">Pour quels</span><span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">bébés</span> ?
                         </h1>
                         <p class="font-heading text-neutral-600 tracking-tight text-2xl font-semibold mb-8">
                             Symptômes les plus fréquents : <br>

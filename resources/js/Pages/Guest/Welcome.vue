@@ -4,14 +4,14 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 
 <template>
     <GuestLayout title="Accueil">
+        <!-- Section 1 -->
         <div class="bg-white rounded-2xl py-4 lg:py-10 px-4 lg:px-10">
             <div class="flex flex-wrap -m-4">
                 <div class="w-full md:w-2/3 p-4">
                     <div class="h-full py-18 lg:py-32 pl-4 lg:pl-18 pr-4 lg:pr-16">
-                        <h1
-                            class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl">
+                        <h1 class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl text-balance">
                             <span class="relative z-10">Accueil Parents-</span>
-                            <span class="bg-accent rounded-lg px-4 inline-block">Bébé</span>
+                            <span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">Bébé</span>
                         </h1>
                         <p class="font-heading text-neutral-600 tracking-tight text-2xl font-semibold mb-8">
                             L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et
@@ -34,12 +34,11 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                                             </div>
                                             Soit
                                         </div>
-                                        <p class="text-neutral-600 tracking-tight text-lg font-medium max-w-xs">
+                                        <p class="text-neutral-100 tracking-tight text-lg font-medium max-w-xs">
                                             parce qu’elles se sentent seules, isolées, démunies, vulnérables devant un
                                             bébé qu’elles ont du mal à comprendre
                                         </p>
                                     </div>
-                                    <!-- <img class="absolute h-32 sm:h-52 object-cover bottom-0 right-0 z-10" src="https://static.shuffle.dev/components/preview/5e80167f-76b7-4ee3-bb5e-b8126519dee3/assets/public/mirga-assets/images/hero/woman-picture1.png" alt=""> -->
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 p-2">
@@ -77,12 +76,14 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
             </div>
         </div>
-        <div>
+
+        <!-- Section 2 -->
+        <div class="my-4">
             <div class="flex flex-wrap -m-2">
                 <div class="w-full md:w-1/3 p-2">
-                    <div class="rounded-3xl p-8 bg-gradient-to-t from-primary to-accent h-full relative overflow-hidden">
+                    <div class="rounded-3xl p-8 bg-accent h-full relative overflow-hidden">
                         <div class="flex flex-col items-start justify-between gap-6 h-full relative z-20">
-                            <div class="font-heading text-2xl tracking-tight font-semibold max-w-xs text-neutral-600">
+                            <div class="font-heading text-2xl tracking-tight font-semibold max-w-xs text-neutral-100 text-balance">
                                 L’Accueil Parents-Bébé, dès son ouverture, a bénéficié du financement et du soutien du
                                 <span class="font-averia text-neutral-900">Conseil Général</span>,
                                 de la <span class="font-averia text-neutral-900">Mutualité de Franche-Comté</span>,
@@ -93,7 +94,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                             </div>
                             <a class="group inline-flex justify-center items-center text-center tracking-tight gap-3"
                                 href="https://www.ars.sante.fr/" target="_blank">
-                                <span class="text-neutral-600 tracking-tight font-semibold group-hover:text-neutral-800 transition duration-200">
+                                <span class="text-neutral-100 underline tracking-tight font-semibold group-hover:text-neutral-900 transition duration-200">
                                     Site de l'ARS
                                 </span>
                                 <div
@@ -113,11 +114,10 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
                 <div class="w-full md:w-1/3 p-2">
                     <div class="rounded-3xl border-2 border-accent border-opacity-50 h-full p-8 relative overflow-hidden">
-                    <!-- <div class="rounded-4xl p-8 bg-orange-50 h-full relative overflow-hidden"> -->
                         <div class="flex items-center justify-between flex-wrap -m-2">
                             <div class="w-full p-2">
                                 <h2 class="font-heading font-averia tracking-tight text-3xl font-semibold mb-4">L’Accueil Parents-Bébé</h2>
-                                <p class="text-neutral-600 tracking-tight text-lg font-medium max-w-xs">
+                                <p class="text-neutral-900 tracking-tight text-lg font-medium max-w-xs">
                                     a bénéficié du soutien de la Ville de Besançon et de la Fondation des Hôpitaux de
                                     France (Pièces jaunes) pour l’aménagement de son espace et l'achat d’un véhicule
                                 </p>
@@ -129,7 +129,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 <div class="w-full md:w-1/3 p-2">
                     <div class="p-8 h-full">
                         <h2 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs">
-                            Il est <span class="bg-accent font-averia rounded-lg px-4 inline-block">ouvert</span> aux familles de la
+                            Il est <span class="bg-accent font-averia rounded-lg px-4 inline-block text-neutral-100">ouvert</span> aux familles de la
                             ville de Besançon mais aussi du Doubs et de la Région
                         </h2>
                         <a :href="route('contact')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-xl hover:text-white focus:text-white bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 border border-neutral-900 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">Nous contacter</a>
@@ -137,6 +137,8 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
             </div>
         </div>
+
+        <!-- Section 3 -->
         <div class="flex flex-col md:flex-row gap-4 mb-6 p-10 bg-white rounded-3xl">
             <div class="w-full xl:w-1/3">
                 <div class="flex items-center -m-3 mb-5 gap-2">
@@ -171,10 +173,12 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
             </div>
         </div>
-        <div>
+
+        <!-- Section 4 -->
+        <div class="my-8">
             <div class="relative font-semibold font-heading">
                 <div class="text-xl sm:text-3xl mr-3">Aussi nous pouvons nommer de la façon suivantes</div>
-                <div class="text-3xl sm:text-6xl mr-3 font-averia">les <span class="bg-accent rounded-lg px-4 inline-block">missions</span> dévolues à cette structure</div>
+                <div class="text-3xl sm:text-6xl mr-3 font-averia">les <span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">missions</span> dévolues à cette structure</div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 grid-flow-col gap-4 mt-4">
                 <div class="row-span-2 rounded-3xl">
@@ -199,7 +203,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                     Prévenir l'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant
                 </div>
             </div>
-            <div class="w-full flex justify-center mt-4">
+            <div class="w-full flex justify-center mt-16">
                 <a :href="route('offer')" class="font-averia inline-flex justify-center items-center text-center h-20 p-5 font-semibold tracking-tight text-2xl text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">
                     Découvrir notre offre de soins
                 </a>

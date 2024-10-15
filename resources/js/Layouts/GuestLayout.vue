@@ -19,7 +19,7 @@ const showingNavigationDropdown = ref(false);
                 <nav class="flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <img class="h-24" src="/images/logo.png" alt="">
-                        <span class="font-annie font-bold text-4xl">Accueil <br> Parents-Bébé</span>
+                        <span class="font-annie font-bold text-5xl">Unité Père Mère Bébé</span>
                     </div>
                     <div class="">
                         <button @click="showingNavigationDropdown = !showingNavigationDropdown" class="lg:hidden">
@@ -28,13 +28,24 @@ const showingNavigationDropdown = ref(false);
                             </svg>
                         </button>
                         <div :class="{ 'hidden': !showingNavigationDropdown }" class="lg:flex lg:items-center lg:space-x-6">
-                            <a :href="route('welcome')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-lg focus:text-neutral-900 bg-transparent hover:bg-transparent focus:bg-transparent border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Accueil</a>
-                            <a :href="route('offer')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-lg focus:text-neutral-900 bg-transparent hover:bg-transparent focus:bg-transparent border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Offre de soins</a>
-                            <a :href="route('who')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-lg focus:text-neutral-900 bg-transparent hover:bg-transparent focus:bg-transparent border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Pour Qui ? </a>
-                            <a :href="route('team')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-lg focus:text-neutral-900 bg-transparent hover:bg-transparent focus:bg-transparent border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Notre équipe</a>
-                            <a :href="route('faq')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-lg focus:text-neutral-900 bg-transparent hover:bg-transparent focus:bg-transparent border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">FAQ</a>
+                            <a :href="route('welcome')"
+                                :class="{ 'bg-accent text-neutral-100 rotate-2': route().current('welcome') }"
+                                class="font-averia inline-flex justify-center items-center text-center p-2 font-semibold tracking-tight text-lg focus:text-neutral-900 border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Accueil Parents-Bébé</a>
+                            <a :href="route('offer')"
+                                :class="{ 'bg-accent text-neutral-100 rotate-2': route().current('offer') }"
+                                class="font-averia inline-flex justify-center items-center text-center p-2 font-semibold tracking-tight text-lg focus:text-neutral-900 border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Offre de soins</a>
+                            <a :href="route('who')"
+                                :class="{ 'bg-accent text-neutral-100 rotate-2': route().current('who') }"
+                                class="font-averia inline-flex justify-center items-center text-center p-2 font-semibold tracking-tight text-lg focus:text-neutral-900 border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Pour Qui ?</a>
+                            <a :href="route('team')"
+                                :class="{ 'bg-accent text-neutral-100 rotate-2': route().current('team') }"
+                                class="font-averia inline-flex justify-center items-center text-center p-2 font-semibold tracking-tight text-lg focus:text-neutral-900 border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">Notre équipe</a>
+                            <a :href="route('faq')"
+                                :class="{ 'bg-accent text-neutral-100 rotate-2': route().current('faq') }"
+                                class="font-averia inline-flex justify-center items-center text-center p-2 font-semibold tracking-tight text-lg focus:text-neutral-900 border border-transparent rounded-lg focus:ring-4 focus:ring-transparent transition duration-200">FAQ</a>
                             <a :href="route('contact')" class="font-averia inline-flex justify-center items-center text-center h-16 p-5 font-semibold tracking-tight text-xl hover:text-white focus:text-white bg-transparent hover:bg-neutral-900 focus:bg-neutral-900 border border-neutral-900 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">Nous contacter</a>
                         </div>
+
                     </div>
                 </nav>
             </header>

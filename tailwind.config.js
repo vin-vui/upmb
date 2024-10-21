@@ -20,9 +20,9 @@ export default {
                 annie: ['Annie Use Your Telescope'],
             },
             colors: {
-                primary: '#98CBAA', // Vert clair
-                secondary: '#3A786b', // Vert foncé
-                accent: '#752B48', // Violet
+                primary: '#98CBAA',
+                secondary: '#3A786b',
+                accent: '#752B48',
             },
         },
     },

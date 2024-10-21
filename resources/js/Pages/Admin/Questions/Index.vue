@@ -1,0 +1,164 @@
+<template>
+<AppLayout title="FAQ" :openModal="openModal" button="ajouter une question">
+    <!-- List -->
+    <dl class="flex flex-col gap-4" ref="questionsList">
+        <div v-for="question in questions" :key="question.id" :data-id="question.id" @click="openModal(question)"
+            class="border-l-4 border-primary py-6 px-4 bg-white hover:shadow-lg hover:scale-105 cursor-pointer flex items-center justify-between group transition-all duration-200">
+            <div>
+                <dt class="text-base font-semibold leading-7 text-gray-900">{{ question.question }}</dt>
+                <dd class="">
+                    <p class="text-base leading-7 text-gray-600">{{ question.answer }}</p>
+                </dd>
+            </div>
+            <div class="flex items-center">
+                <div class="hidden group-hover:block btn-accent mr-8">modifier</div>
+                <svg class="hidden group-hover:block text-gray-300 cursor-move" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="4" r="1" transform="rotate(90 8 4)"/><circle cx="16" cy="4" r="1" transform="rotate(90 16 4)"/><circle cx="8" cy="12" r="1" transform="rotate(90 8 12)"/><circle cx="16" cy="12" r="1" transform="rotate(90 16 12)"/><circle cx="8" cy="20" r="1" transform="rotate(90 8 20)"/><circle cx="16" cy="20" r="1" transform="rotate(90 16 20)"/></g></svg>
+            </div>
+        </div>
+    </dl>
+
+    <!-- Modal -->
+    <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+        <div class="bg-white p-6 rounded-xl shadow-lg w-1/3">
+            <h3 class="modal-heading">{{ isEditing ? 'Modifier la question' : 'Ajouter une question' }}</h3>
+            <form @submit.prevent="submitForm" class="flex flex-col gap-4">
+                <div class="">
+                    <InputLabel value="Question" />
+                    <input v-model="form.question" class="input-accent" type="text">
+                    <InputError :message="form.errors.question" />
+                </div>
+                <div class="">
+                    <InputLabel value="Réponse" />
+                    <textarea v-model="form.answer" class="input-accent"></textarea>
+                    <InputError :message="form.errors.answer" class="-mt-2" />
+                </div>
+                <div class="flex justify-between mt-4">
+                    <button v-if="isEditing" type="button" @click="deleteQuestion" class="btn-accent-light">supprimer</button>
+                    <div v-else>&nbsp;</div>
+                    <div class="flex gap-4">
+                        <button type="button" @click="closeModal" class="btn-secondary">annuler</button>
+                        <button type="submit" class="btn-primary">{{ isEditing ? 'modifier' : 'ajouter' }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</AppLayout>
+</template>
+
+<script>
+import AppLayout from '@/Layouts/AppLayout.vue';
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import Sortable from 'sortablejs';
+
+export default {
+    components: {
+        AppLayout,
+        InputError,
+        InputLabel,
+    },
+    props: {
+        questions: {
+            type: Array,
+            required: true,
+        },
+    },
+    data() {
+        return {
+            showModal: false,
+            isEditing: false,
+            editingQuestionId: null,
+            form: this.$inertia.form({
+                question: '',
+                answer: '',
+            }),
+            // questions: [...this.questions], // Copy of questions to avoid reactivity issues
+        };
+    },
+    mounted() {
+        this.sortable = Sortable.create(this.$refs.questionsList, {
+            animation: 200,
+            ghostClass: 'ghost',
+            onEnd: this.onDragEnd,
+        });
+    },
+    beforeDestroy() {
+        if (this.sortable) {
+            this.sortable.destroy();
+        }
+    },
+    methods: {
+        openModal(question = null) {
+            if (question && typeof question === 'object' && 'id' in question) {
+                this.isEditing = true;
+                this.editingQuestionId = question.id;
+                this.form.question = question.question;
+                this.form.answer = question.answer;
+            } else {
+                this.isEditing = false;
+                this.editingQuestionId = null;
+                this.form.reset();
+            }
+            this.showModal = true;
+        },
+        closeModal() {
+            this.showModal = false;
+            this.form.clearErrors();
+            this.$emit('closeModal');
+        },
+        submitForm() {
+            if (this.isEditing) {
+                this.form.put(route('questions.update', this.editingQuestionId), {
+                    preserveState: (page) => Object.keys(page.props.errors).length,
+                    onSuccess: () => {
+                        this.closeModal();
+                        this.$inertia.reload({ only: ['questions'] });
+                    },
+                });
+            } else {
+                this.form.post(route('questions.store'), {
+                    preserveState: (page) => Object.keys(page.props.errors).length,
+                    onSuccess: () => {
+                        this.closeModal();
+                        this.$inertia.reload({ only: ['questions'] });
+                    },
+                });
+            }
+        },
+        deleteQuestion() {
+            if (confirm('Êtes-vous sûr de vouloir supprimer cette question ?')) {
+                this.form.delete(route('questions.destroy', this.editingQuestionId), {
+                    preserveState: (page) => Object.keys(page.props.errors).length,
+                    onSuccess: () => {
+                        this.closeModal();
+                        this.$inertia.reload({ only: ['questions'] });
+                    },
+                });
+            }
+        },
+        onDragEnd(event) {
+            // Get ordered ids
+            const orderedIds = Array.from(this.$refs.questionsList.children).map((el, index) => {
+                const id = el.getAttribute('data-id');
+                return {
+                    id: parseInt(id),
+                    order: index + 1,
+                };
+            });
+
+            // Update local questions order
+            this.questions.sort((a, b) => {
+                const indexA = orderedIds.findIndex(item => item.id === a.id);
+                const indexB = orderedIds.findIndex(item => item.id === b.id);
+                return indexA - indexB;
+            });
+
+            // Post new order
+            this.$inertia.post(route('questions.reorder'), { orderedIds }, {
+                preserveState: true,
+            });
+        },
+    },
+};
+</script>

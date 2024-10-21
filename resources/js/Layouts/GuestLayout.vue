@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import { Head } from '@inertiajs/vue3';
-import Hero from '@/Pages/Guest/_Hero.vue';
 
 defineProps({
     title: String,
@@ -13,7 +12,6 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <Head :title="title" />
-        <!-- <Hero /> -->
         <div class="min-h-screen bg-gradient-to-br from-primary to-secondary px-4 pt-6 pb-6 lg:px-20">
             <header class="bg-white px-10 lg:px-10 py-7 lg:py-4 rounded-2xl">
                 <nav class="flex items-center justify-between">

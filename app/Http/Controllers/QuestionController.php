@@ -31,6 +31,7 @@ class QuestionController extends Controller
         $validated = $request->validate([
             'question' => 'required|string|max:255',
             'answer' => 'required|string',
+            'link' => 'nullable|string',
         ]);
 
         Question::create($validated);
@@ -51,6 +52,7 @@ class QuestionController extends Controller
         $validated = $request->validate([
             'question' => 'required|string|max:255',
             'answer' => 'required|string',
+            'link' => 'nullable|string',
         ]);
 
         $question->update($validated);

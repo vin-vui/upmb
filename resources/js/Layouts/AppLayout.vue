@@ -39,7 +39,7 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-50">
+        <div class="min-h-screen bg-gradient-to-br from-primary/80 via-secondary/10 to-accent/30">
             <!-- Navigation -->
             <nav class="bg-white z-40">
                 <!-- Primary Navigation Menu -->
@@ -54,9 +54,15 @@ const logout = () => {
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div class="hidden space-x-4 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Tableau de bord
+                                </NavLink>
+                                <NavLink :href="route('questions.index')" :active="route().current('questions.*')">
+                                    FAQ
+                                </NavLink>
+                                <NavLink :href="route('notices.index')" :active="route().current('notices.*')">
+                                    Annonces
                                 </NavLink>
                             </div>
                         </div>

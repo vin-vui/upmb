@@ -2,6 +2,7 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\QuestionController;
 
 /**
@@ -25,4 +26,5 @@ Route::middleware([
     Route::get('/dashboard', function () { return Inertia::render('Dashboard'); })->name('dashboard');
     Route::resource('questions', QuestionController::class);
     Route::post('/questions/reorder', [QuestionController::class, 'reorder'])->name('questions.reorder');
+    Route::resource('notices', NoticeController::class);
 });

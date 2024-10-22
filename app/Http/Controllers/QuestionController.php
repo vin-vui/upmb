@@ -42,13 +42,11 @@ class QuestionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param string $id
+     * @param Question $question
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Question $question)
     {
-        $question = Question::findOrFail($id);
-
         $validated = $request->validate([
             'question' => 'required|string|max:255',
             'answer' => 'required|string',
@@ -63,12 +61,12 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param string $id
+     * @param Question $question
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(Question $question)
     {
-        Question::destroy($id);
+        $question->delete();
 
         return redirect()->back();
     }

@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\DashboardController;
 
 /**
  * Guest routes
@@ -23,7 +24,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () { return Inertia::render('Dashboard'); })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::put('/informations/{information}', [DashboardController::class, 'updateInformation'])->name('informations.update');
     Route::resource('questions', QuestionController::class);
     Route::post('/questions/reorder', [QuestionController::class, 'reorder'])->name('questions.reorder');
     Route::resource('notices', NoticeController::class);

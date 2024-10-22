@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
-import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -39,7 +38,7 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gradient-to-br from-primary/80 via-secondary/10 to-accent/30">
+        <div class="min-h-screen bg-gradient-to-br from-primary to-secondary">
             <!-- Navigation -->
             <nav class="bg-white z-40">
                 <!-- Primary Navigation Menu -->
@@ -288,10 +287,10 @@ const logout = () => {
 
             <!-- Page Heading -->
             <div class="">
-                <header class="bg-white shadow sticky top-0 z-40">
-                    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 flex items-center justify-between">
+                <header class="bg-white shadow sticky top-0 z-40 ">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 flex h-16 items-center justify-between">
                         <h2 class="font-averia text-2xl font-bold leading-10 tracking-tight text-gray-900">{{ title }}</h2>
-                        <button @click="openModal" class="btn-accent">
+                        <button v-if="button" @click="openModal" class="btn-accent">
                             {{ button }}
                         </button>
                     </div>

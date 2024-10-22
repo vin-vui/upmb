@@ -8,7 +8,7 @@
 
 @layer components {
     .input-accent {
-        @apply w-full mt-1 p-2 border border-gray-200 rounded focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+        @apply w-full text-neutral-800 text-sm mt-1 p-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
     }
 
     .modal-heading {

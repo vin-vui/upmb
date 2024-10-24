@@ -5,14 +5,10 @@
         <div class="grid grid-cols-2 gap-y-4 gap-x-8">
             <div v-for="information in filteredInformations" :key="information.id">
                 <InputLabel :value="information.title" />
-                <input v-model="information.label" class="input-accent" type="text"
-                    @input="saveInformation(information)" />
+                <input v-model="information.label" class="input-accent" type="text" @input="saveInformation(information)" />
             </div>
         </div>
         <div v-for="information in plaquetteInformations" :key="information.id" class="mt-4">
-            <!-- <InputLabel value="plaquette d'information" />
-            <input type="file" id="pdf-upload" accept=".pdf" @change="saveInformation(information, $event)" /> -->
-
             <InputLabel value="plaquette d'information" />
             <div class="flex items-center gap-4">
                 <button type="button"
@@ -105,7 +101,6 @@ export default {
                         console.error("Erreur lors de la sauvegarde automatique", errors);
                     }
                 });
-
                 this.isSaving = false;
             }, 1000);
         },

@@ -40,14 +40,14 @@ const logout = () => {
 
         <div class="min-h-screen bg-gradient-to-br from-primary to-secondary">
             <!-- Navigation -->
-            <nav class="bg-white z-40">
+            <nav class="bg-white z-40 shadow-sm">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('welcome')">
                                     <img class="h-16" src="/images/logo.png" alt="">
                                 </Link>
                             </div>
@@ -287,9 +287,9 @@ const logout = () => {
 
             <!-- Page Heading -->
             <div class="">
-                <header class="bg-white shadow sticky top-0 z-40 ">
+                <header class="bg-white shadow-xl sticky top-0 z-30 ">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 flex h-16 items-center justify-between">
-                        <h2 class="font-averia text-2xl font-bold leading-10 tracking-tight text-gray-900">{{ title }}</h2>
+                        <h2 class="font-averia text-2xl font-bold capitalize leading-10 tracking-tight text-gray-900">{{ title }}</h2>
                         <button v-if="button" @click="openModal" class="btn-accent">
                             {{ button }}
                         </button>

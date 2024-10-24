@@ -1,6 +1,6 @@
 <template>
     <AppLayout title="Tableau de bord">
-        <div class="rounded-3xl bg-white p-8 shadow-lg">
+        <div class="rounded-3xl bg-white p-6 shadow-lg relative mt-8">
             <h3 class="modal-heading">Informations</h3>
             <div class="grid grid-cols-2 gap-y-4 gap-x-8">
                 <div v-for="information in informations" :key="information.id">
@@ -13,9 +13,11 @@
                     />
                 </div>
             </div>
-            <!-- Message de dernière sauvegarde -->
-            <div v-if="lastSaved" class="text-sm text-green-600 mt-4">
-                Dernière sauvegarde à {{ lastSavedTime }}
+            <div v-if="lastSaved || isSaving" class="absolute inset-x-0 -bottom-4 w-full flex justify-center">
+                <div class="bg-accent rounded-full shadow-lg py-1 px-3 text-sm text-white flex items-center">
+                    <span v-if="lastSaved && !isSaving" >Sauvegardé à {{ lastSavedTime }}</span>
+                    <span v-if="isSaving" class="loading loading-dots loading-xs"></span>
+                </div>
             </div>
         </div>
     </AppLayout>
@@ -39,6 +41,7 @@ export default {
     data() {
         return {
             lastSaved: false,
+            isSaving: false,
             lastSavedTime: null,
             debounceTimeout: null,
         };
@@ -48,6 +51,7 @@ export default {
             if (this.debounceTimeout) {
                 clearTimeout(this.debounceTimeout);
             }
+            this.isSaving = true;
             this.debounceTimeout = setTimeout(() => {
                 this.$inertia.put(route('informations.update', information.id), {
                     label: information.label,
@@ -64,6 +68,7 @@ export default {
                         console.error("Erreur lors de la sauvegarde automatique", errors);
                     },
                 });
+                this.isSaving = false;
             }, 1000);
         },
     },

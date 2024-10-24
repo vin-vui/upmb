@@ -12,7 +12,7 @@
     }
 
     .modal-heading {
-        @apply font-averia text-2xl font-bold mb-8 text-center;
+        @apply font-averia text-2xl font-bold mb-8 text-center bg-accent rounded-full -mt-12 text-neutral-50 py-2;
     }
 
     .btn-primary {

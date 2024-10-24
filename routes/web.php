@@ -25,7 +25,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::put('/informations/{information}', [DashboardController::class, 'updateInformation'])->name('informations.update');
+    Route::post('/informations/{information}', [DashboardController::class, 'updateInformation'])->name('informations.update');
     Route::resource('questions', QuestionController::class);
     Route::post('/questions/reorder', [QuestionController::class, 'reorder'])->name('questions.reorder');
     Route::resource('notices', NoticeController::class);

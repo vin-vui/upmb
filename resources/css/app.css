@@ -16,19 +16,19 @@
     }
 
     .btn-primary {
-        @apply capitalize text-white font-averia font-semibold py-2 px-4 border border-primary hover:border-secondary rounded-full bg-primary hover:bg-secondary transition-all duration-200;
+        @apply whitespace-nowrap capitalize text-white font-averia font-semibold py-2 px-4 border border-primary hover:border-secondary rounded-full bg-primary hover:bg-secondary transition-all duration-200;
     }
 
     .btn-secondary {
-        @apply  capitalize text-black font-averia font-semibold py-2 px-4 border rounded-full border-secondary hover:bg-secondary hover:text-white transition-all duration-200;
+        @apply  whitespace-nowrap capitalize text-black font-averia font-semibold py-2 px-4 border rounded-full border-secondary hover:bg-secondary hover:text-white transition-all duration-200;
     }
 
     .btn-accent {
-        @apply capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply whitespace-nowrap capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
     }
 
     .btn-accent-light {
-        @apply capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply whitespace-nowrap capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
     }
 }
 

@@ -15,7 +15,6 @@
             </div>
         </div>
     </dl>
-
     <!-- Modal -->
     <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
         <div class="bg-white p-6 rounded-xl shadow-lg w-1/3">

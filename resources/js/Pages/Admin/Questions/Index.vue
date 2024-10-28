@@ -7,7 +7,7 @@
             <div>
                 <dt class="font-averia text-xl font-bold leading-10 tracking-tight text-gray-900">{{ question.question }}</dt>
                 <dd class="">
-                    <p class="text-neutral-600 tracking-tight">{{ question.answer }}</p>
+                    <p class="text-neutral-600 tracking-tight" v-html="question.answer"></p>
                 </dd>
                 <div v-if="question.link" class="flex items-center gap-1 mt-3">
                     <svg class="text-accent size-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 3h-6.75M21 3v6.75M21 3l-8.25 8.25M9.4 3c-2.24 0-3.36 0-4.216.436a4 4 0 0 0-1.748 1.748C3 6.04 3 7.16 3 9.4v5.2c0 2.24 0 3.36.436 4.216a4 4 0 0 0 1.748 1.748C6.04 21 7.16 21 9.4 21h5.2c2.24 0 3.36 0 4.216-.436a4 4 0 0 0 1.748-1.748C21 17.96 21 16.84 21 14.6v-1.1"/></svg>
@@ -20,7 +20,6 @@
             </div>
         </div>
     </dl>
-
     <!-- Modal -->
     <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
         <div class="bg-white p-6 rounded-xl shadow-lg w-1/3">
@@ -32,7 +31,10 @@
                     <InputError :message="form.errors.question" />
                 </div>
                 <div class="">
-                    <InputLabel value="Réponse" />
+                    <div class="flex items-center justify-between">
+                        <InputLabel value="Réponse" />
+                        <span class="text-neutral-600 text-sm">Utilisez **mot** pour mettre en gras</span>
+                    </div>
                     <textarea v-model="form.answer" class="input-accent" rows="5"></textarea>
                     <InputError :message="form.errors.answer" class="-mt-2" />
                 </div>
@@ -83,7 +85,6 @@ export default {
                 answer: '',
                 link: '',
             }),
-            // questions: [...this.questions], // Copy of questions to avoid reactivity issues
         };
     },
     mounted() {
@@ -92,6 +93,7 @@ export default {
             ghostClass: 'ghost',
             onEnd: this.onDragEnd,
         });
+        this.convertStrongToAsterisks();
     },
     beforeDestroy() {
         if (this.sortable) {
@@ -99,6 +101,12 @@ export default {
         }
     },
     methods: {
+        formatContent() {
+            this.form.answer = this.form.answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        },
+        convertStrongToAsterisks() {
+            this.form.answer = this.form.answer.replace(/<strong>(.*?)<\/strong>/g, '**$1**');
+        },
         openModal(question = null) {
             if (question && typeof question === 'object' && 'id' in question) {
                 this.isEditing = true;
@@ -106,6 +114,7 @@ export default {
                 this.form.question = question.question;
                 this.form.answer = question.answer;
                 this.form.link = question.link;
+                this.convertStrongToAsterisks();
             } else {
                 this.isEditing = false;
                 this.editingQuestionId = null;
@@ -119,6 +128,7 @@ export default {
             this.$emit('closeModal');
         },
         submitForm() {
+            this.formatContent();
             if (this.isEditing) {
                 this.form.put(route('questions.update', this.editingQuestionId), {
                     preserveState: (page) => Object.keys(page.props.errors).length,

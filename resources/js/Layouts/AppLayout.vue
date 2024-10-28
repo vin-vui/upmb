@@ -57,11 +57,14 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Tableau de bord
                                 </NavLink>
+                                <NavLink :href="route('notices.index')" :active="route().current('notices.*')">
+                                    Annonces
+                                </NavLink>
                                 <NavLink :href="route('questions.index')" :active="route().current('questions.*')">
                                     FAQ
                                 </NavLink>
-                                <NavLink :href="route('notices.index')" :active="route().current('notices.*')">
-                                    Annonces
+                                <NavLink :href="route('partners.index')" :active="route().current('partners.*')">
+                                    Partenaires
                                 </NavLink>
                             </div>
                         </div>

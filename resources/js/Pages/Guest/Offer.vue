@@ -70,6 +70,78 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
             </div>
         </div>
 
+        <div class="bg-white rounded-2xl py-4 lg:py-10 px-4 lg:px-10">
+            <div class="flex flex-wrap -m-4">
+                <div class="w-full md:w-2/3 p-4">
+                    <div class="h-full py-18 lg:py-32 pl-4 lg:pl-18 pr-4 lg:pr-16">
+                        <h1 class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl text-balance">
+                            <span class="relative z-10">Accueil Parents-</span>
+                            <span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">Bébé</span>
+                        </h1>
+                        <p class="font-heading text-neutral-600 tracking-tight text-2xl font-semibold mb-8">
+                            L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et
+                            psychologiques pendant la grossesse et/ou dès la sortie de maternité. Elle accueille les
+                            futurs parents, les mères, les pères et leur bébé jusqu’aux 2 ans de leur enfant :
+                        </p>
+                        <div class="flex flex-wrap -m-2">
+                            <div class="w-full md:w-1/2 p-2">
+                                <div class="rounded-3xl p-8 bg-secondary h-full relative overflow-hidden">
+                                    <div class="flex flex-col items-start justify-between gap-4 h-full relative z-20">
+                                        <div
+                                            class="font-heading font-averia text-3xl tracking-tight font-semibold max-w-xs flex items-center gap-2">
+                                            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                    viewbox="0 0 12 12" fill="none">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z"
+                                                        fill="#19191B"></path>
+                                                </svg>
+                                            </div>
+                                            Soit
+                                        </div>
+                                        <p class="text-neutral-100 tracking-tight text-lg font-medium max-w-xs">
+                                            parce qu’elles se sentent seules, isolées, démunies, vulnérables devant un
+                                            bébé qu’elles ont du mal à comprendre
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-2">
+                                <div class="rounded-3xl border-2 border-accent border-opacity-50 h-full p-8">
+                                    <div class="flex flex-col items-start justify-between gap-4 h-full relative z-20">
+                                        <span
+                                            class="font-heading font-averia tracking-tight text-3xl font-semibold flex items-center gap-2">
+                                            <div
+                                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                    viewbox="0 0 12 12" fill="none">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z"
+                                                        fill="#19191B"></path>
+                                                </svg>
+                                            </div>
+                                            Soit
+                                        </span>
+                                        <p class="text-neutral-600 tracking-tight text-lg font-medium max-w-xs">
+                                            parce que le bébé, lui-même présente des difficultés, ce qui rend la
+                                            relation difficile
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="relative h-56 md:h-full">
+                        <img class="absolute inset-0 rounded-3xl w-full h-full object-cover"
+                            src="https://images.unsplash.com/photo-1590527548172-295fdcb1bab0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW90aGVyJTIwZmF0aGVyJTIwYmFieXxlbnwwfDF8MHx8fDA%3D"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Les groupes de parole -->
         <div id="section-one" class="relative text-3xl sm:text-6xl -mb-6 ml-4 mt-16 mr-3 font-averia">Les groupes de<span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">parole</span></div>
         <div class="md:p-4 p-2 rounded-3xl border-2 border-accent">

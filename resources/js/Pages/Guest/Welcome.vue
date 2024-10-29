@@ -1,84 +1,61 @@
 <script setup>
+import ShapeTopWhite from '@/Components/ShapeTopWhite.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import Hero from '@/Pages/Guest/_Hero.vue';
 </script>
 
 <template>
     <GuestLayout title="Accueil">
-        <!-- Section 1 -->
-        <div class="bg-white rounded-2xl py-4 lg:py-10 px-4 lg:px-10">
-            <div class="flex flex-wrap -m-4">
-                <div class="w-full md:w-2/3 p-4">
-                    <div class="h-full py-18 lg:py-32 pl-4 lg:pl-18 pr-4 lg:pr-16">
-                        <h1 class="font-heading font-averia mb-12 font-semibold text-6xl sm:text-9xl xl:text-11xl max-w-7xl text-balance">
-                            <span class="relative z-10">Accueil Parents-</span>
-                            <span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">Bébé</span>
-                        </h1>
-                        <p class="font-heading text-neutral-600 tracking-tight text-2xl font-semibold mb-8">
-                            L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et
-                            psychologiques pendant la grossesse et/ou dès la sortie de maternité. Elle accueille les
-                            futurs parents, les mères, les pères et leur bébé jusqu’aux 2 ans de leur enfant :
-                        </p>
-                        <div class="flex flex-wrap -m-2">
-                            <div class="w-full md:w-1/2 p-2">
-                                <div class="rounded-3xl p-8 bg-secondary h-full relative overflow-hidden">
-                                    <div class="flex flex-col items-start justify-between gap-4 h-full relative z-20">
-                                        <div
-                                            class="font-heading font-averia text-3xl tracking-tight font-semibold max-w-xs flex items-center gap-2">
-                                            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                    viewbox="0 0 12 12" fill="none">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z"
-                                                        fill="#19191B"></path>
-                                                </svg>
-                                            </div>
-                                            Soit
-                                        </div>
-                                        <p class="text-neutral-100 tracking-tight text-lg font-medium max-w-xs">
-                                            parce qu’elles se sentent seules, isolées, démunies, vulnérables devant un
-                                            bébé qu’elles ont du mal à comprendre
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2 p-2">
-                                <div class="rounded-3xl border-2 border-accent border-opacity-50 h-full p-8">
-                                    <div class="flex flex-col items-start justify-between gap-4 h-full relative z-20">
-                                        <span
-                                            class="font-heading font-averia tracking-tight text-3xl font-semibold flex items-center gap-2">
-                                            <div
-                                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                    viewbox="0 0 12 12" fill="none">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z"
-                                                        fill="#19191B"></path>
-                                                </svg>
-                                            </div>
-                                            Soit
-                                        </span>
-                                        <p class="text-neutral-600 tracking-tight text-lg font-medium max-w-xs">
-                                            parce que le bébé, lui-même présente des difficultés, ce qui rend la
-                                            relation difficile
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+
+        <Hero />
+
+        <ShapeTopWhite />
+
+        <div class="my-8 px-4 container mx-auto">
+            <div class="flex flex-wrap justify-between items-end">
+                <div class="w-full lg:w-1/2 rounded-3xl">
+                    <div class="relative font-semibold font-heading">
+                        <h2 class="h2">Nos missions</h2>
+                        <p>Accompagner, soutenir, et créer des liens : chaque famille est unique, et notre mission est d’offrir un cadre bienveillant pour que chacun trouve sa place.</p>
+                    </div>
+                    <img class="rounded-3xl shadow-xl shadow-primary/60 -rotate-2 object-cover h-full mt-4" src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default">
+                    <div class="bordered-card">
+                        <div class="bg-white rounded-3xl p-8 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium">
+                            Soutenir l’accès à la fonction de mère ou de père
+                        </div>
+                    </div>
+                    <div class="bordered-card">
+                        <div class="bg-white rounded-3xl p-8 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium">
+                            Prévenir et/ou soigner les troubles psychopathologiques chez les parents
+                        </div>
+                    </div>
+                    <div class="bordered-card">
+                        <div class="bg-white rounded-3xl p-8 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium">
+                            Prévenir et/ou soigner les troubles des interactions précoces mères-enfants ou parents-enfants
+                        </div>
+                    </div>
+                    <div class="bordered-card">
+                        <div class="bg-white rounded-3xl p-8 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium">
+                            Prévenir les risques de maltraitance précoce
+                        </div>
+                    </div>
+                    <div class="bordered-card">
+                        <div class="bg-white rounded-3xl p-8 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium">
+                            Prévenir l'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/3 p-4">
-                    <div class="relative h-56 md:h-full">
-                        <img class="absolute inset-0 rounded-3xl w-full h-full object-cover"
-                            src="https://images.unsplash.com/photo-1590527548172-295fdcb1bab0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW90aGVyJTIwZmF0aGVyJTIwYmFieXxlbnwwfDF8MHx8fDA%3D"
-                            alt="">
-                    </div>
-                </div>
+            </div>
+            <div class="w-full flex justify-center mt-16">
+                <a :href="route('offer')" class="font-averia inline-flex justify-center items-center text-center h-20 p-5 font-semibold tracking-tight text-2xl text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">
+                    Découvrir notre offre de soins
+                </a>
             </div>
         </div>
 
-        <!-- Section 2 -->
-        <div class="my-4">
+        <!-- <div class="my-4">
             <div class="flex flex-wrap -m-2">
                 <div class="w-full md:w-1/3 p-2">
                     <div class="rounded-3xl p-8 bg-accent h-full relative overflow-hidden">
@@ -137,8 +114,6 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
             </div>
         </div>
-
-        <!-- Section 3 -->
         <div class="flex flex-col md:flex-row gap-4 mb-6 p-10 bg-white rounded-3xl">
             <div class="w-full xl:w-1/3">
                 <div class="flex items-center -m-3 mb-5 gap-2">
@@ -172,42 +147,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                     primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des remaniements physiologiques, psychiques que pour l’enfant en plein développement.
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <!-- Section 4 -->
-        <div class="my-8">
-            <div class="relative font-semibold font-heading">
-                <div class="text-xl sm:text-3xl mr-3">Aussi nous pouvons nommer de la façon suivantes</div>
-                <div class="text-3xl sm:text-6xl mr-3 font-averia">les <span class="bg-accent rounded-lg px-4 inline-block text-neutral-100">missions</span> dévolues à cette structure</div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 grid-flow-col gap-4 mt-4">
-                <div class="row-span-2 rounded-3xl">
-                    <img class="rounded-3xl object-cover h-full" src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                </div>
-                <div class="bg-white rounded-3xl p-8 flex items-center h-44 text-neutral-600 tracking-tight text-lg font-medium">
-                    Soutenir l’accès à la fonction de mère ou de père
-                </div>
-                <div class="bg-white rounded-3xl p-8 flex items-center h-44 text-neutral-600 tracking-tight text-lg font-medium">
-                    Prévenir et/ou soigner les troubles psychopathologiques chez les parents
-                </div>
-                <div class="bg-white rounded-3xl p-8 flex items-center h-44 text-neutral-600 tracking-tight text-lg font-medium">
-                    Prévenir et/ou soigner les troubles des interactions précoces mères-enfants ou parents-enfants
-                </div>
-                <div class="rounded-3xl border-2 border-accent relative">
-                    <img class="rounded-3xl absolute h-32 sm:h-52 object-cover bottom-0 left-0 z-10" src="/images/baby_1.png" alt="">
-                </div>
-                <div class="bg-white rounded-3xl p-8 flex items-center h-44 text-neutral-600 tracking-tight text-lg font-medium">
-                    Prévenir les risques de maltraitance précoce
-                </div>
-                <div class="bg-white rounded-3xl p-8 flex items-center h-44 text-neutral-600 tracking-tight text-lg font-medium">
-                    Prévenir l'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant
-                </div>
-            </div>
-            <div class="w-full flex justify-center mt-16">
-                <a :href="route('offer')" class="font-averia inline-flex justify-center items-center text-center h-20 p-5 font-semibold tracking-tight text-2xl text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">
-                    Découvrir notre offre de soins
-                </a>
-            </div>
-        </div>
     </GuestLayout>
 </template>

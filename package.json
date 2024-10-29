@@ -20,6 +20,7 @@
         "vue": "^3.3.13"
     },
     "dependencies": {
+        "@headlessui/vue": "^1.7.23",
         "flyonui": "^1.1.0",
         "sortablejs": "^1.15.3"
     }

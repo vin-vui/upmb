@@ -8,11 +8,11 @@
 
 @layer components {
     .h1 {
-        @apply font-averia mb-12 font-semibold text-3xl sm:text-5xl xl:text-7xl text-balance text-secondary;
+        @apply font-averia mb-12 font-semibold text-3xl sm:text-5xl xl:text-7xl text-balance text-secondary cursor-default;
     }
 
     .h2 {
-        @apply font-averia mb-12 font-semibold text-3xl sm:text-5xl xl:text-7xl text-balance text-secondary;
+        @apply font-averia mb-12 font-semibold text-3xl sm:text-5xl xl:text-7xl text-balance text-secondary cursor-default;
     }
 
     strong {
@@ -20,11 +20,11 @@
     }
 
     p {
-        @apply text-neutral-600 tracking-tight text-2xl font-semibold text-balance;
+        @apply text-neutral-600 tracking-tight text-2xl font-semibold text-balance cursor-default;
     }
 
     .bordered-card {
-        @apply p-0.5 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/80 to-primary/80 rounded-3xl transform hover:-translate-y-3 transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 text-balance;
+        @apply p-0.5 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/80 to-primary/80 rounded-3xl transform hover:-translate-y-3 transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 text-balance cursor-default;
     }
 
     .input-accent {

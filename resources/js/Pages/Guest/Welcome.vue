@@ -11,12 +11,14 @@
             <div class="w-full lg:w-1/2 rounded-3xl">
                 <div class="relative font-semibold font-heading">
                     <h2 class="h2">Nos Missions</h2>
-                    <p>Accompagner, soutenir, et créer des liens : chaque famille est unique, et notre mission est
-                        d’offrir un cadre bienveillant pour que chacun trouve sa place.</p>
+                    <p>
+                        Accompagner, soutenir, et créer des liens : chaque famille est unique, et notre mission est
+                        d’offrir un cadre bienveillant pour que chacun trouve sa place.
+                    </p>
                 </div>
-                <img class="rounded-3xl shadow-xl shadow-primary/60 -rotate-2 object-cover h-full mt-8"
-                    src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="">
+                <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square h-[40rem] mt-8"
+                    src="/images/illu_3.jpg"
+                    alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
             </div>
             <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default">
                 <div v-for="mission in missions" class="bordered-card">
@@ -116,12 +118,11 @@
                 </div>
                 <div class="w-full md:w-1/3 pl-10">
                     <div class="h-full">
-                        <h2 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs">
-                            Il est <span
-                                class="bg-accent font-averia rounded-lg px-4 inline-block text-neutral-100">ouvert</span>
+                        <h3 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs cursor-default">
+                            Il est <span class="bg-accent font-averia rounded-lg px-4 inline-block text-neutral-100">ouvert</span>
                             aux familles de la
                             ville de Besançon mais aussi du Doubs et de la Région
-                        </h2>
+                        </h3>
                         <ContactButton />
                     </div>
                 </div>

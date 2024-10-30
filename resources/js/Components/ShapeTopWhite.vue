@@ -1,6 +1,6 @@
 <template>
     <div class="shapedividers_com-2773 h-24 -mt-24">
-
+        &nbsp;
     </div>
 </template>
 

@@ -6,7 +6,7 @@
     <ShapeTopWhite />
 
     <!-- Nos Missions -->
-    <section class="mt-12 mb-32 px-4 container mx-auto relative isolate">
+    <section class="mt-12 mb-32 pb-24 px-4 container mx-auto relative isolate">
         <div class="flex flex-wrap justify-between items-end">
             <div class="w-full lg:w-1/2 rounded-3xl">
                 <div class="relative font-semibold font-heading">
@@ -36,18 +36,18 @@
             <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-primary to-secondary opacity-25"
                 style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
         </div>
-        <div class="w-full flex justify-center mt-16">
+        <!-- <div class="w-full flex justify-center mt-16">
             <a :href="route('offer')"
                 class="font-averia inline-flex justify-center items-center text-center h-20 p-5 font-semibold tracking-tight text-2xl text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">
                 Découvrir notre offre de soins
             </a>
-        </div>
+        </div> -->
     </section>
 
     <ShapeTopPrimaryLight />
 
     <!-- Notre Historique -->
-    <section class="bg-primary/30">
+    <section class="bg-primary/30 pb-24">
         <div class="pt-18 sm:pt-24 pb-24 sm:pb-32 container mx-auto">
             <div class="mx-auto max-w-2xl lg:text-center mb-12">
                 <h2 class="h2">Notre Historique</h2>
@@ -127,6 +127,86 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <ShapeTopWhite />
+
+    <!-- Notre Offre de Soin -->
+    <section class="relative isolate pt-24 pb-48 overflow-hidden ">
+        <div class="relative z-10 container mx-auto px-4">
+            <div class="md:max-w-3xl md:mx-auto">
+                <h2 class="h2">Notre Offre de Soin</h2>
+                <p>
+                    Nous offrons un accompagnement bienveillant pour les parents et leur bébé, avec des consultations prénatales, un suivi postnatal, et des conseils adaptés. Nos équipes sont là pour vous soutenir à chaque étape.
+                </p>
+                <div class="flex flex-wrap -m-5 mt-8">
+                    <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
+                        <div class="h-full p-9 transform hover:-translate-y-3 bg-primary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour évoquer les préoccupations</p>
+                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les Groupes de Parole</h3>
+                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                je découvre
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 p-5">
+                        <div class="flex flex-col justify-between p-9 h-full transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour la mère et son enfant</p>
+                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">L’hôpital de jour Mère-Bébé</h3>
+                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                je découvre
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
+                        <div class="h-full p-9 transform hover:-translate-y-3 bg-secondary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Un espace d'écoute</p>
+                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les consultations périnatales</h3>
+                            <img class="mx-auto" src="gradia-assets/images/features/card.png" alt="">
+                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                je découvre
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 p-5">
+                        <div class="bordered-card group cursor-pointer">
+                            <div class="bg-white p-9 rounded-3xl">
+                                <p class="mb-4 font-heading text-base text-opacity-70">Accueille les futurs parent</p>
+                                <h3 class="mb-20 font-heading font-bold text-3xl text-balance">Accueil Parents-Bébé</h3>
+                                <img class="mx-auto" src="gradia-assets/images/features/comments.png" alt="">
+                                <span class="font-heading font-averia text-gray-900 text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                    <div class="size-6 bg-gray-900 group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                        <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    je découvre
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 top-24 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-accent to-primary opacity-25"
+                style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
         </div>
     </section>
 

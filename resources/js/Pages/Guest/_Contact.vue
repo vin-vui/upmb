@@ -6,10 +6,10 @@
         <div class="relative isolate">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
-                    <img class="h-96 w-full flex-none rounded-2xl object-cover lg:aspect-square lg:h-auto lg:max-w-sm shadow-xl shadow-accent/50 -rotate-2" src="/images/illu_2.webp" alt="" />
+                    <img class="h-96 w-full flex-none rounded-2xl object-cover lg:aspect-square lg:h-auto lg:max-w-sm shadow-xl shadow-accent/50 -rotate-2" :src=cta.image alt="" />
                     <div class="w-full flex-auto">
-                        <h2 class="h2">Besoin d'un petit coup de fil ?</h2>
-                        <p class="mt-6 text-gray-900">Envie de parler ou de venir nous voir ? Notre équipe est là pour vous écouter et répondre à toutes vos questions. Un simple appel peut faire toute la différence !</p>
+                        <h2 class="h2 text-accent">{{ cta.title }}</h2>
+                        <p class="mt-6 text-gray-900" v-html=cta.paragraph></p>
                         <div class="mt-10 flex">
                             <ContactButton />
                         </div>
@@ -23,7 +23,28 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContactButton from '@/Components/ContactButton.vue';
 import ShapeTopWhite from '@/Components/ShapeTopWhite.vue';
+import axios from 'axios';
+
+export default {
+  components: {
+    ContactButton, ShapeTopWhite,
+  },
+  data() {
+    return {
+        cta: [],
+    };
+  },
+  async mounted() {
+    try {
+      const response = await axios.get('/cta');
+      this.cta = response.data;
+      console.log('CTA :', this.cta);
+    } catch (error) {
+      console.error('Erreur lors du chargement des liens du footer :', error);
+    }
+  },
+};
 </script>

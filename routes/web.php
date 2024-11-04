@@ -13,6 +13,7 @@ use App\Http\Controllers\DashboardController;
  * Guest routes
  */
 Route::get('/',                                         [GuestController::class, 'welcome'])                                             ->name('welcome');
+Route::get('/cta',                                      [GuestController::class, 'cta']);
 Route::get('/offre-de-soins',                           function () { return Inertia::render('Guest/Offer'); })     ->name('offer');
 Route::get('/pour-qui',                                 function () { return Inertia::render('Guest/Who'); })       ->name('who');
 Route::get('/notre-equipe',                             function () { return Inertia::render('Guest/Team'); })      ->name('team');

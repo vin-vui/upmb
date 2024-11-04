@@ -1,7 +1,7 @@
 <template>
 <GuestLayout title="Accueil">
 
-    <Hero />
+    <Hero :title=heroSection.title :content=heroSection.paragraph :image=heroSection.image />
 
     <ShapeTopWhite />
 
@@ -10,38 +10,27 @@
         <div class="flex flex-wrap justify-between items-end">
             <div class="w-full lg:w-1/2 rounded-3xl">
                 <div class="relative font-semibold font-heading">
-                    <h2 class="h2">Nos Missions</h2>
-                    <p>
-                        Accompagner, soutenir, et créer des liens : chaque famille est unique, et notre mission est
-                        d’offrir un cadre bienveillant pour que chacun trouve sa place.
-                    </p>
+                    <h2 class="h2 text-accent">{{ missionsSection.title }}</h2>
+                    <p v-html=missionsSection.paragraph></p>
                 </div>
                 <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square h-[40rem] mt-8"
-                    src="/images/illu_3.jpg"
+                    :src=missionsSection.image
                     alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
             </div>
             <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default">
-                <div v-for="mission in missions" class="bordered-card">
+                <div v-for="mission in missionsSection.items" class="bordered-card">
                     <div class="bg-white rounded-3xl py-8 px-4 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium gap-4">
                         <div class="w-6">
                             <svg class="size-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
                         </div>
-                        {{ mission.description }}
+                        {{ mission.content }}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="absolute inset-x-0 top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-            aria-hidden="true">
-            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-primary to-secondary opacity-25"
-                style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
+        <div class="absolute inset-x-0 top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-primary to-secondary opacity-25" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
         </div>
-        <!-- <div class="w-full flex justify-center mt-16">
-            <a :href="route('offer')"
-                class="font-averia inline-flex justify-center items-center text-center h-20 p-5 font-semibold tracking-tight text-2xl text-white bg-neutral-900 hover:bg-neutral-800 focus:bg-neutral-800 rounded-lg focus:ring-4 focus:ring-neutral-400 transition duration-200">
-                Découvrir notre offre de soins
-            </a>
-        </div> -->
     </section>
 
     <ShapeTopPrimaryLight />
@@ -50,16 +39,8 @@
     <section class="bg-primary/30 pb-24">
         <div class="pt-18 sm:pt-24 pb-24 sm:pb-32 container mx-auto">
             <div class="mx-auto max-w-2xl lg:text-center mb-12">
-                <h2 class="h2">Notre Historique</h2>
-                <p>
-                    L’Accueil Parents-Bébé, dès son ouverture, a bénéficié du financement et du soutien du
-                    <strong>Conseil Général</strong>,
-                    de la <strong>Mutualité de Franche-Comté</strong>,
-                    de la <strong>Ville de Besançon</strong>,
-                    de l’<strong>Etat</strong>,
-                    du <strong>Centre Hospitalier de Novillars</strong>
-                    avant d’être pérennisée en 2013 par l’<strong>Agence Régional de Santé</strong>.
-                </p>
+                <h2 class="h2">{{ historySection.title }}</h2>
+                <p v-html="historySection.paragraph"></p>
             </div>
             <div class="flex flex-wrap items-center justify-between">
                 <div class="bordered-card md:w-2/3">
@@ -136,10 +117,8 @@
     <section class="relative isolate pt-24 pb-48 overflow-hidden ">
         <div class="relative z-10 container mx-auto px-4">
             <div class="md:max-w-3xl md:mx-auto">
-                <h2 class="h2">Notre Offre de Soin</h2>
-                <p>
-                    Nous offrons un accompagnement bienveillant pour les parents et leur bébé, avec des consultations prénatales, un suivi postnatal, et des conseils adaptés. Nos équipes sont là pour vous soutenir à chaque étape.
-                </p>
+                <h2 class="h2">{{ offerSection.title }}</h2>
+                <p v-html="offerSection.paragraph"></p>
                 <div class="flex flex-wrap -m-5 mt-8">
                     <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
                         <div class="h-full p-9 transform hover:-translate-y-3 bg-primary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
@@ -218,16 +197,15 @@
             <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
                 <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
                     <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                        <h2 class="h2 text-white">Témoignage</h2>
-                        <p class="text-neutral-100">Plongez au cœur de notre unité et découvrez comment nous accompagnons les familles au quotidien. À travers cette vidéo, explorez notre approche bienveillante et notre engagement auprès des parents et de leurs tout-petits.</p>
+                        <h2 class="h2 text-white">{{ testimonySection.title }}</h2>
+                        <p class="text-neutral-100" v-html="testimonySection.paragraph"></p>
                     </div>
                 </div>
                 <div class="sm:px-6 lg:px-0">
                     <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none shadow-xl shadow-accent/50">
                         <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                         <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                            <!-- <img src="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png" alt="Product screenshot" width="2432" height="1442" class="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10" /> -->
-                            <video class="w-full rounded-tl-3xl" controls>
+                            <video class="w-full rounded-tl-3xl" controls >
                                 <source src="/videos/test.mp4" type="video/mp4">
                                 Votre navigateur ne supporte pas la balise vidéo.
                             </video>
@@ -246,8 +224,8 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap items-center -m-6">
                 <div class="w-full md:w-1/2 p-6">
-                    <h2 class="h2">Nos Partenaires</h2>
-                    <p>Grâce à des partenariats solides, nous travaillons main dans la main avec des acteurs engagés pour offrir un soutien complet aux familles. Ensemble, nous créons un réseau de confiance.</p>
+                    <h2 class="h2">{{ partnersSection.title }}</h2>
+                    <p v-html="partnersSection.paragraph"></p>
                 </div>
                 <div class="w-full md:w-1/2 p-6">
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start -m-5">
@@ -270,26 +248,20 @@ import ShapeTopSecondary from '@/Components/ShapeTopSecondary.vue';
 import ShapeTopWhite from '@/Components/ShapeTopWhite.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Hero from '@/Pages/Guest/_Hero.vue';
+import { computed } from 'vue';
 
-const missions = [
-    {
-        description: 'Soutenir l’accès à la fonction de mère ou de père.',
-    },
-    {
-        description: 'Prévenir et/ou soigner les troubles psychopathologiques chez les parents.',
-    },
-    {
-        description: 'Prévenir et/ou soigner les troubles des interactions précoces mères-enfants ou parents-enfants.',
-    },
-    {
-        description: 'Prévenir les risques de maltraitance précoce.',
-    },
-    {
-        description: 'Prévenir l\'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant.',
-    },
-];
-
-defineProps({
+const props = defineProps({
     partners: Object,
+    sections: Array,
 });
+
+const filterSection = (identifier) => {
+    return props.sections.find(section => section.identifier === identifier);
+};
+const heroSection       = computed(() => filterSection("HERO"));
+const missionsSection   = computed(() => filterSection("MISSIONS"));
+const historySection    = computed(() => filterSection("HISTORY"));
+const offerSection      = computed(() => filterSection("OFFER"));
+const testimonySection  = computed(() => filterSection("TESTIMONY"));
+const partnersSection   = computed(() => filterSection("PARTNERS"));
 </script>

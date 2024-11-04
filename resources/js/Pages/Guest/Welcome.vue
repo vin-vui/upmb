@@ -146,12 +146,12 @@
                             <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour évoquer les préoccupations</p>
                             <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les Groupes de Parole</h3>
                             <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
                                     <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
                                     </svg>
                                 </div>
-                                je découvre
+                                <span class="link link-primary link-animated">je découvre</span>
                             </span>
                         </div>
                     </div>
@@ -160,12 +160,12 @@
                             <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour la mère et son enfant</p>
                             <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">L’hôpital de jour Mère-Bébé</h3>
                             <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
                                     <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
                                     </svg>
                                 </div>
-                                je découvre
+                                <span class="link link-primary link-animated">je découvre</span>
                             </span>
                         </div>
                     </div>
@@ -175,12 +175,12 @@
                             <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les consultations périnatales</h3>
                             <img class="mx-auto" src="gradia-assets/images/features/card.png" alt="">
                             <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
                                     <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
                                     </svg>
                                 </div>
-                                je découvre
+                                <span class="link link-primary link-animated">je découvre</span>
                             </span>
                         </div>
                     </div>
@@ -191,12 +191,12 @@
                                 <h3 class="mb-20 font-heading font-bold text-3xl text-balance">Accueil Parents-Bébé</h3>
                                 <img class="mx-auto" src="gradia-assets/images/features/comments.png" alt="">
                                 <span class="font-heading font-averia text-gray-900 text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                    <div class="size-6 bg-gray-900 group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000">
+                                    <div class="size-6 bg-gray-900 group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
                                         <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
                                         </svg>
                                     </div>
-                                    je découvre
+                                    <span class="link link-primary link-animated">je découvre</span>
                                 </span>
                             </div>
                         </div>
@@ -210,12 +210,63 @@
         </div>
     </section>
 
+    <ShapeTopSecondary />
+
+    <!-- Témoignage Vidéo -->
+    <section class="overflow-hidden bg-secondary pt-24 pb-48">
+        <div class="mx-auto container md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+                <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
+                    <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+                        <h2 class="h2 text-white">Témoignage</h2>
+                        <p class="text-neutral-100">Plongez au cœur de notre unité et découvrez comment nous accompagnons les familles au quotidien. À travers cette vidéo, explorez notre approche bienveillante et notre engagement auprès des parents et de leurs tout-petits.</p>
+                    </div>
+                </div>
+                <div class="sm:px-6 lg:px-0">
+                    <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none shadow-xl shadow-accent/50">
+                        <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
+                        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                            <!-- <img src="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png" alt="Product screenshot" width="2432" height="1442" class="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10" /> -->
+                            <video class="w-full rounded-tl-3xl" controls>
+                                <source src="/videos/test.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la balise vidéo.
+                            </video>
+                        </div>
+                        <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <ShapeTopPrimaryLight />
+
+    <!-- Partenaires -->
+    <section class="bg-primary/30 pt-24 pb-48">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center -m-6">
+                <div class="w-full md:w-1/2 p-6">
+                    <h2 class="h2">Nos Partenaires</h2>
+                    <p>Grâce à des partenariats solides, nous travaillons main dans la main avec des acteurs engagés pour offrir un soutien complet aux familles. Ensemble, nous créons un réseau de confiance.</p>
+                </div>
+                <div class="w-full md:w-1/2 p-6">
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start -m-5">
+                        <div v-for="partner in partners" class="w-auto bordered-card">
+                            <img class="h-36 p-4 bg-white rounded-3xl" :src=partner.url alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </GuestLayout>
 </template>
 
 <script setup>
 import ContactButton from '@/Components/ContactButton.vue';
 import ShapeTopPrimaryLight from '@/Components/ShapeTopPrimaryLight.vue';
+import ShapeTopSecondary from '@/Components/ShapeTopSecondary.vue';
 import ShapeTopWhite from '@/Components/ShapeTopWhite.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Hero from '@/Pages/Guest/_Hero.vue';
@@ -236,5 +287,9 @@ const missions = [
     {
         description: 'Prévenir l\'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant.',
     },
-]
+];
+
+defineProps({
+    partners: Object,
+});
 </script>

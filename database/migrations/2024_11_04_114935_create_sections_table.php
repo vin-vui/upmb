@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('paragraph')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('fixed_item_number')->default(true);
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <Link :href="route('welcome')">
-                        <img class="h-16" src="/images/logo.png" alt="">
+                            <img class="h-16" src="/images/logo.png" alt="">
                         </Link>
                     </div>
                     <!-- Navigation Links -->
@@ -42,22 +42,22 @@
                                 <MenuItems class="absolute right-0 mt-2 origin-top-right rounded-3xl bg-white shadow-lg ring-1 ring-accent focus:outline-none">
                                 <div class="px-3 py-4">
                                     <MenuItem v-slot="{ active }">
-                                        <NavLink>
+                                        <NavLink class="w-full justify-center" :href="route('sections.welcome')" :active="route().current('sections.*')">
                                             accueil
                                         </NavLink>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
-                                        <NavLink>
+                                        <NavLink class="w-full justify-center" :href="route('sections.welcome')" :active="route().current('sections.*')">
                                             offre de soin
                                         </NavLink>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
-                                        <NavLink>
+                                        <NavLink class="w-full justify-center" :href="route('sections.welcome')" :active="route().current('sections.*')">
                                             pour qui ?
                                         </NavLink>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
-                                        <NavLink>
+                                        <NavLink class="w-full justify-center" :href="route('sections.welcome')" :active="route().current('sections.*')">
                                             notre équipe
                                         </NavLink>
                                     </MenuItem>
@@ -69,12 +69,9 @@
                     <!-- Profile and Logout -->
                     <div class="flex items-center gap-4 border border-primary rounded-full">
                         <a class="btn-primary" :href="route('profile.show')">Profil</a>
-                        <form class="rounded-full p-2 cursor-pointer hover:bg-accent hover:text-neutral-50"
-                            @click="logout">
-                            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M12 12q-.425 0-.712-.288T11 11V3q0-.425.288-.712T12 2t.713.288T13 3v8q0 .425-.288.713T12 12m0 9q-1.875 0-3.512-.712t-2.85-1.925t-1.925-2.85T3 12q0-1.525.5-2.963T4.95 6.4q.275-.35.7-.337t.75.337q.275.275.25.675t-.275.75Q5.7 8.725 5.35 9.8T5 12q0 2.925 2.038 4.963T12 19t4.963-2.037T19 12q0-1.15-.337-2.238T17.6 7.775q-.25-.325-.275-.712t.25-.663q.3-.3.725-.312t.7.312q.975 1.2 1.488 2.625T21 12q0 1.875-.712 3.513t-1.925 2.85t-2.85 1.925T12 21" />
+                        <form class="rounded-full p-2 cursor-pointer hover:bg-accent hover:text-neutral-50 transition-all duration-200" @click="logout">
+                            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12 12q-.425 0-.712-.288T11 11V3q0-.425.288-.712T12 2t.713.288T13 3v8q0 .425-.288.713T12 12m0 9q-1.875 0-3.512-.712t-2.85-1.925t-1.925-2.85T3 12q0-1.525.5-2.963T4.95 6.4q.275-.35.7-.337t.75.337q.275.275.25.675t-.275.75Q5.7 8.725 5.35 9.8T5 12q0 2.925 2.038 4.963T12 19t4.963-2.037T19 12q0-1.15-.337-2.238T17.6 7.775q-.25-.325-.275-.712t.25-.663q.3-.3.725-.312t.7.312q.975 1.2 1.488 2.625T21 12q0 1.875-.712 3.513t-1.925 2.85t-2.85 1.925T12 21" />
                             </svg>
                         </form>
                     </div>

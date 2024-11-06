@@ -7,7 +7,7 @@
 
     <!-- Nos Missions -->
     <section class="mt-12 mb-32 pb-24 px-4 container mx-auto relative isolate">
-        <div class="flex flex-wrap justify-between items-end">
+        <div class="flex flex-wrap justify-between items-center">
             <div class="w-full lg:w-1/2 rounded-3xl">
                 <div class="relative font-semibold font-heading">
                     <h2 class="h2 text-accent">{{ missionsSection.title }}</h2>
@@ -55,12 +55,10 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">L’Unité Père-Mère-Bébé</div>
+                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[0].content }}</div>
                             </div>
                             <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                fait l’objet d’une convention entre deux établissements : le Centre Hospitalier de Novillars, le
-                                Centre Hospitalier Universitaire. Il fait partie du Pôle de Psychiatrie de l’Enfant et
-                                l’Adolescent du Centre Hospitalier de Novillars.
+                                {{ historySection.items[1].content }}
                             </div>
                         </div>
                         <div class="w-full xl:w-1/3">
@@ -70,12 +68,10 @@
                                         <path fill="currentColor" d="M445.057 345.134L464 274.1V232c-8.136-93.993-87.933-168-184-168h-32v168H132.158l-17.844-78.768A32.155 32.155 0 0 0 83.038 128H16v32h67.038l40.475 178.67A80 80 0 1 0 224 416q0-4.05-.4-8h104.8q-.395 3.948-.4 8a80 80 0 1 0 117.057-70.866M280 96c78.411 0 143.145 59.678 151.164 136H280ZM144 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48m194.763-88H213.237a80.166 80.166 0 0 0-57.316-39.108L139.408 264H432v5.9l-17.7 66.368a80.592 80.592 0 0 0-6.3-.271A80.026 80.026 0 0 0 338.763 376M408 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48" />
                                     </svg>
                                 </div>
-                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">Cette structure est née</div>
+                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[2].content }}</div>
                             </div>
                             <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                en 2007 à l’initiative de professionnelle du soin de la petite enfance ayant souhaité proposer
-                                un lieu d’accueil et d’accompagnement pouvant permettre en cas de besoin un lien entre la sortie
-                                de la maternité et l’accès aux soins de l’enfance.
+                                {{ historySection.items[3].content }}
                             </div>
                         </div>
                         <div class="w-full xl:w-1/3">
@@ -86,13 +82,11 @@
                                     </svg>
                                 </div>
                                 <div class="text-2xl font-medium font-averia tracking-tight font-heading">
-                                    Il semblait par ailleurs
+                                    {{ historySection.items[4].content }}
                                 </div>
                             </div>
                             <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la
-                                période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des
-                                remaniements physiologiques, psychiques que pour l’enfant en plein développement.
+                                {{ historySection.items[5].content }}
                             </div>
                         </div>
                     </div>

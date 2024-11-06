@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('section_identifier')->nullable();
             $table->foreign('section_identifier')->references('identifier')->on('sections');
+            $table->timestamps();
         });
     }
 

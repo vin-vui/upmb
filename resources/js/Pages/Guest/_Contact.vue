@@ -41,7 +41,6 @@ export default {
     try {
       const response = await axios.get('/cta');
       this.cta = response.data;
-      console.log('CTA :', this.cta);
     } catch (error) {
       console.error('Erreur lors du chargement des liens du footer :', error);
     }

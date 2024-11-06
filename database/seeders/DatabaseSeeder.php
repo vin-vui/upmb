@@ -29,14 +29,15 @@ class DatabaseSeeder extends Seeder
         DB::table('sections')->insert([
             'title' => 'Unité d’Accueil Père-Mère-Bébé',
             'paragraph' => 'Un lieu d\'échange et de parole <strong>avec ou sans rendez-vous</strong>, pour les futurs parents et les parents, de la grossesse <strong>jusqu’aux 24 mois de l’enfant</strong>.',
-            'image' => 'images/illu_1.webp',
+            'image' => '/images/illu_1.webp',
             'identifier' => 'HERO',
         ]);
         DB::table('sections')->insert([
             'title' => 'Nos Missions',
             'paragraph' => 'Accompagner, soutenir, et créer des liens : chaque famille est unique, et notre mission est d’<strong>offrir un cadre bienveillant</strong> pour que chacun trouve sa place.',
-            'image' => 'images/illu_3.jpg',
+            'image' => '/images/illu_3.jpg',
             'identifier' => 'MISSIONS',
+            'fixed_item_number' => false,
         ]);
         DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Soutenir l’accès à la fonction de mère ou de père.']);
         DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir et/ou soigner les troubles psychopathologiques chez les parents.']);
@@ -49,6 +50,12 @@ class DatabaseSeeder extends Seeder
             'image' => null,
             'identifier' => 'HISTORY',
         ]);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'L’Unité Père-Mère-Bébé']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'fait l’objet d’une convention entre deux établissements : le Centre Hospitalier de Novillars, le Centre Hospitalier Universitaire. Il fait partie du Pôle de Psychiatrie de l’Enfant et l’Adolescent du Centre Hospitalier de Novillars.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Cette structure est née']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'en 2007 à l’initiative de professionnelle du soin de la petite enfance ayant souhaité proposer un lieu d’accueil et d’accompagnement pouvant permettre en cas de besoin un lien entre la sortie de la maternité et l’accès aux soins de l’enfance.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Il semblait par ailleurs']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des remaniements physiologiques, psychiques que pour l’enfant en plein développement.']);
         DB::table('sections')->insert([
             'title' => 'Notre Offre de Soin',
             'paragraph' => 'Nous offrons un accompagnement bienveillant pour les parents et leur bébé, avec des <strong>consultations prénatales</strong>, un <strong>suivi postnatal</strong>, et des conseils adaptés. Nos équipes sont là pour vous soutenir à chaque étape.',
@@ -70,7 +77,7 @@ class DatabaseSeeder extends Seeder
         DB::table('sections')->insert([
             'title' => 'Besoin d\'un petit coup de fil ?',
             'paragraph' => 'Envie de parler ou de venir nous voir ? Notre équipe est là pour vous écouter et répondre à toutes vos questions. Un simple appel peut faire toute la différence !',
-            'image' => 'images/illu_2.webp',
+            'image' => '/images/illu_2.webp',
             'identifier' => 'CTA',
         ]);
     }

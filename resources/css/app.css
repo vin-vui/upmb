@@ -28,27 +28,27 @@
     }
 
     .input-accent {
-        @apply w-full text-neutral-800 text-sm mt-1 p-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+        @apply bg-white w-full text-neutral-800 text-sm mt-1 p-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
     }
 
     .modal-heading {
-        @apply font-averia text-2xl font-bold mb-8 text-center bg-accent rounded-full -mt-12 text-neutral-50 py-2;
+        @apply font-averia text-2xl font-bold mb-8 text-center bg-accent border-2 border-accent rounded-full -mt-12 text-neutral-50 py-2;
     }
 
     .btn-primary {
-        @apply whitespace-nowrap capitalize text-white font-averia font-semibold py-2 px-4 border border-primary hover:border-secondary rounded-full bg-primary hover:bg-secondary transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize text-white font-averia font-semibold py-2 px-4 border border-primary hover:border-secondary rounded-full bg-primary hover:bg-secondary transition-all duration-200;
     }
 
     .btn-secondary {
-        @apply  whitespace-nowrap capitalize text-black font-averia font-semibold py-2 px-4 border rounded-full border-secondary hover:bg-secondary hover:text-white transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize text-black font-averia font-semibold py-2 px-4 border rounded-full border-secondary hover:bg-secondary hover:text-white transition-all duration-200;
     }
 
     .btn-accent {
-        @apply whitespace-nowrap capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
     }
 
     .btn-accent-light {
-        @apply whitespace-nowrap capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
     }
 }
 

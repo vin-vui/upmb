@@ -14,7 +14,7 @@ class GuestController extends Controller
     public function welcome(): \Inertia\Response
     {
         $partners = Partner::all();
-        $sections = Section::whereIn('identifier', ['HERO', 'MISSIONS', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->get();
+        $sections = Section::whereIn('identifier', values: ['HERO', 'MISSIONS', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->get();
 
         return Inertia::render('Guest/Welcome', compact('partners', 'sections'));
     }

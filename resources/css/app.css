@@ -44,11 +44,11 @@
     }
 
     .btn-accent {
-        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia border py-2 px-4 font-semibold rounded-full border-accent hover:bg-accent hover:text-white focus:outline-none active:text-opacity-75 transition-all duration-200;
     }
 
     .btn-accent-light {
-        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none focus:ring active:text-opacity-75 transition-all duration-200;
+        @apply flex items-center gap-2 whitespace-nowrap capitalize font-averia py-2 px-4 border-b border-transparent font-semibold text-accent hover:border-accent focus:outline-none active:text-opacity-75 transition-all duration-200;
     }
 }
 

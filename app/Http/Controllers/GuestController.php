@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Section;
 
@@ -24,6 +25,13 @@ class GuestController extends Controller
         $cta = Section::whereIn('identifier', ['CTA'])->first();
 
         return $cta;
+    }
+
+    public function notices()
+    {
+        $notices = Notice::where('display', true)->get();
+
+        return $notices;
     }
 }
 

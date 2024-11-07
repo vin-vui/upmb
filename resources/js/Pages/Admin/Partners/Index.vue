@@ -1,11 +1,11 @@
 <template>
     <AppLayout title="Partenaires" :openModal="openModal" button="ajouter un partenaire">
         <!-- List -->
-        <dl class="grid grid-cols-3 gap-8">
+        <dl class="grid grid-cols-3 gap-y-8 gap-x-4">
             <div v-for="partner in partners" :key="partner.id" :data-id="partner.id" @click="openModal(partner)"
                 class="rounded-3xl border-l-4 py-6 px-4 bg-white hover:shadow-lg hover:scale-105 cursor-pointer flex items-center justify-between group transition-all duration-200 border-secondary">
-                <div>
-                    <dt class="font-averia text-xl font-bold leading-10 tracking-tight text-gray-900">{{ partner.label }}</dt>
+                <div class=" w-2/3">
+                    <dt class="font-averia text-xl font-bold leading-10 tracking-tight text-gray-900 truncate">{{ partner.label }}</dt>
                     <dd class="">
                         <img :src="partner.url" class="object-contain h-16" />
                     </dd>

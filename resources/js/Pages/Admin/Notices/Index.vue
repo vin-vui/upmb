@@ -7,7 +7,7 @@
             <div>
                 <dt class="font-averia text-xl font-bold leading-10 tracking-tight text-gray-900">{{ notice.title }}</dt>
                 <dd class="">
-                    <p class="text-neutral-600 tracking-tight">{{ notice.description }}</p>
+                    <p class="mt-2 text-neutral-600 tracking-tight text-lg font-medium">{{ notice.description }}</p>
                 </dd>
             </div>
             <div class="flex items-center">

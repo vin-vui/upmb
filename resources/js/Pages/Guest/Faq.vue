@@ -34,7 +34,7 @@
                                     role="region"
                                 >
                                     <div class="px-5 pb-4">
-                                        <p class="text-neutral-600 tracking-tight text-lg font-medium" v-html="faq.answer"></p>
+                                        <p class="text-neutral-600 tracking-tight text-lg font-medium text-balance" v-html="faq.answer"></p>
                                     </div>
                                     <div v-if="faq.link" class="flex items-center justify-center gap-1 mb-4">
                                         <svg class="text-accent size-3" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">

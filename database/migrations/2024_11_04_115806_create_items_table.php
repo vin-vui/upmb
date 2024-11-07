@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->text('content');
             $table->string('section_identifier')->nullable();
             $table->foreign('section_identifier')->references('identifier')->on('sections');
             $table->timestamps();

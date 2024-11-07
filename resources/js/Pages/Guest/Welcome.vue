@@ -200,7 +200,7 @@
                         <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                         <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                             <video class="w-full rounded-tl-3xl" controls >
-                                <source src="/videos/test.mp4" type="video/mp4">
+                                <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
                                 Votre navigateur ne supporte pas la balise vidéo.
                             </video>
                         </div>

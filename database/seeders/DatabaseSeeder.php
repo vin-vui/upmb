@@ -93,5 +93,10 @@ class DatabaseSeeder extends Seeder
         DB::table('questions')->insert(['question' => 'Dois-je venir avec mon bébé ?', 'answer' => 'Oui, c\'est préférable de venir avec votre bébé.']);
         DB::table('questions')->insert(['question' => 'Quelle pièce fournir lors du premier RDV ?', 'answer' => 'Lors de votre premier rendez-vous, merci de vous munir de votre carte vitale et de votre carte de mutuelle.']);
         DB::table('questions')->insert(['question' => 'Que devrais-je payer ?', 'answer' => 'Les consultations sont prises en charge par la sécurité sociale.', 'link' => 'https://www.ameli.fr/']);
+
+        DB::table('partners')->insert(['label' => 'Centre Hospitalier de Novillars', 'url' => '/images/structures_photo_logo_567-1554213346.gif']);
+        DB::table('partners')->insert(['label' => 'CHRU', 'url' => '/images/Logo_CHU_Besancon-1814599075.jpg']);
+        DB::table('partners')->insert(['label' => 'ARS', 'url' => '/images/ARS-Logo-920185936.png']);
+        DB::table('partners')->insert(['label' => 'Polyclinique de Franche-Comté', 'url' => '/images/Arc_77xchqzNxg.png']);
     }
 }

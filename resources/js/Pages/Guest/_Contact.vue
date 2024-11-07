@@ -40,7 +40,7 @@ export default {
             const response = await axios.get('/get-cta');
             this.cta = response.data;
         } catch (error) {
-            console.error('Erreur lors du chargement des liens du footer :', error);
+            console.error('Erreur lors du chargement du CTA :', error);
         }
     },
 };

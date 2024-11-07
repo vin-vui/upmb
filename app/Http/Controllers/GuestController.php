@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use Inertia\Inertia;
 use App\Models\Notice;
 use App\Models\Partner;
@@ -18,6 +19,13 @@ class GuestController extends Controller
         $sections = Section::whereIn('identifier', values: ['HERO', 'MISSIONS', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->get();
 
         return Inertia::render('Guest/Welcome', compact('partners', 'sections'));
+    }
+
+    public function faq(): \Inertia\Response
+    {
+        $questions = Question::orderBy('order')->get();
+
+        return Inertia::render('Guest/Faq', compact('questions'));
     }
 
     public function cta()

@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
         ]);
 
+        DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l\'affichage 🤩', 'display' => true]);
+
         DB::table('informations')->insert(['title' => 'adresse',    'label' => 'Parc ALPIA, 8A rue Jacquard, 25000 Besançon']);
         DB::table('informations')->insert(['title' => 'email',      'label' => 'secretariat.resado@ch-novillars.fr']);
         DB::table('informations')->insert(['title' => 'téléphone',  'label' => '03 81 88 33 62']);
@@ -80,5 +82,16 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_2.webp',
             'identifier' => 'CTA',
         ]);
+
+        DB::table('questions')->insert(['question' => 'Quels sont les horaires d\'ouverture de l\'unité ?', 'answer' => 'Nous sommes ouverts du lundi au vendredi, de 9h à 17h.']);
+        DB::table('questions')->insert(['question' => 'Comment prendre rendez-vous ?', 'answer' => 'Vous pouvez nous contacter par téléphone au 03 81 88 33 62, ou par email à l\'adresse adresse@test.com.']);
+        DB::table('questions')->insert(['question' => 'Quels sont les services proposés par l\'unité ?', 'answer' => 'Nous proposons des consultations prénatales, un suivi postnatal, et des conseils adaptés pour les parents et leur bébé.', 'link' => 'https://upmb.test/offre-de-soins']);
+        DB::table('questions')->insert(['question' => 'Quels sont les partenaires de l\'unité ?', 'answer' => 'Nous travaillons avec des acteurs engagés pour offrir un soutien complet aux familles.']);
+        DB::table('questions')->insert(['question' => 'Comment puis-je soutenir l\'unité ?', 'answer' => 'Vous pouvez nous contacter pour en savoir plus sur les possibilités de soutien et de partenariat.', 'link' => 'mailto:pouet@test.fr']);
+        DB::table('questions')->insert(['question' => 'Est ce que je peux venir avec mes autres enfants ?', 'answer' => 'Oui, vous pouvez venir avec vos autres enfants.']);
+        DB::table('questions')->insert(['question' => 'Est ce que je peux venir avec mon ou ma conjointe ?', 'answer' => 'Oui, vous pouvez venir avec votre conjoint(e).']);
+        DB::table('questions')->insert(['question' => 'Dois-je venir avec mon bébé ?', 'answer' => 'Oui, c\'est préférable de venir avec votre bébé.']);
+        DB::table('questions')->insert(['question' => 'Quelle pièce fournir lors du premier RDV ?', 'answer' => 'Lors de votre premier rendez-vous, merci de vous munir de votre carte vitale et de votre carte de mutuelle.']);
+        DB::table('questions')->insert(['question' => 'Que devrais-je payer ?', 'answer' => 'Les consultations sont prises en charge par la sécurité sociale.', 'link' => 'https://www.ameli.fr/']);
     }
 }

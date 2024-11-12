@@ -1,5 +1,5 @@
 <template>
-    <div class="shapedividers_com-7239 h-40">
+    <div class="shapedividers_com-7239 h-40 -mt-40">
         &nbsp;
     </div>
 </template>

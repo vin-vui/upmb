@@ -1,6 +1,6 @@
 <template>
     <GuestLayout title="FAQ">
-        <div class="-mt-32 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/30 to-primary/40 background-animate overflow-hidden">
+        <section class="-mt-32 pb-32 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/30 to-primary/40 background-animate overflow-hidden">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-3 gap-8 -m-6 pt-64 pb-36">
                     <div class="">
@@ -14,7 +14,7 @@
                                 v-for="(faq, index) in questions"
                                 :key="index"
                                 :id="'faq-popout-' + index"
-                                class="accordion-item bg-white border accordion-item-active:scale-[1.05] accordion-item-active:mb-3 transition-transform ease-in duration-300"
+                                class="accordion-item bg-white border accordion-item-active:scale-[1.05] accordion-item-active:mb-3 accordion-item-active:shadow-xl accordion-item-active:shadow-accent/50 transition-transform ease-in duration-300"
                                 :class="{ 'active': index === 0 }"
                             >
                                 <button
@@ -48,17 +48,77 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <ShapeTopSecondary />
+        <section class="overflow-hidden bg-secondary pt-24 pb-48">
+            <div class="mx-auto container md:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-3 lg:items-start">
+                    <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
+                        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+                            <h2 class="h2 text-white">Toutes nos vidéos</h2>
+                            <p class="text-neutral-100">
+                                Découvrez notre collection de vidéos inspirantes, éducatives et informatives. Que vous cherchiez à en savoir plus sur nos services, à explorer des témoignages ou à approfondir des sujets spécifiques, cette section rassemble toutes nos vidéos en un seul endroit pour un accès facile.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sm:px-6 lg:px-0 lg:col-span-2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
+                                <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
+                                <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                                    <video class="w-full rounded-tl-3xl" controls >
+                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                        Votre navigateur ne supporte pas la balise vidéo.
+                                    </video>
+                                </div>
+                                <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true" />
+                            </div>
+                            <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
+                                <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
+                                <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                                    <video class="w-full rounded-tl-3xl" controls >
+                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                        Votre navigateur ne supporte pas la balise vidéo.
+                                    </video>
+                                </div>
+                                <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true" />
+                            </div>
+                            <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
+                                <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
+                                <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                                    <video class="w-full rounded-tl-3xl" controls >
+                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                        Votre navigateur ne supporte pas la balise vidéo.
+                                    </video>
+                                </div>
+                                <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true" />
+                            </div>
+                            <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
+                                <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
+                                <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                                    <video class="w-full rounded-tl-3xl" controls >
+                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                        Votre navigateur ne supporte pas la balise vidéo.
+                                    </video>
+                                </div>
+                                <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </GuestLayout>
 </template>
 
 <script>
 import ContactButton from '@/Components/ContactButton.vue';
+import ShapeTopSecondary from '@/Components/ShapeTopSecondary.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 
 export default {
     components: {
-        GuestLayout, ContactButton
+        GuestLayout, ContactButton, ShapeTopSecondary
     },
 
     props: {

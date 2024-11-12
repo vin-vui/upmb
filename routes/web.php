@@ -23,6 +23,7 @@ Route::get('/nous-contacter',                           function () { return Ine
 /**
  * API routes
  */
+Route::get('/get-informations',                             [GuestController::class, 'informations']);
 Route::get('/get-cta',                                  [GuestController::class, 'cta']);
 Route::get('/get-notices',                              [GuestController::class, 'notices']);
 

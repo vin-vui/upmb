@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Section;
+use App\Models\Information;
 
 class GuestController extends Controller
 {
@@ -40,6 +41,13 @@ class GuestController extends Controller
         $notices = Notice::where('display', true)->get();
 
         return $notices;
+    }
+
+    public function informations()
+    {
+        $informations = Information::all();
+
+        return $informations;
     }
 }
 

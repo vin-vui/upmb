@@ -3,44 +3,32 @@
     <Contact />
 
     <ShapeTopAccent />
-    
+
     <footer class="bg-accent">
         <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="xl:grid xl:grid-cols-2 xl:gap-8">
                 <div class="space-y-8">
                     <div class="flex items-center gap-2">
                         <img class="size-24 object-contain bg-white rounded-full" src="/images/logo.png" alt="">
                         <span class="text-gray-50 font-annie font-bold text-3xl">Unité Père Mère Bébé</span>
                     </div>
                 </div>
-                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm/6 font-semibold text-white">Plan du site</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.solutions" :key="item.name">
-                                    <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm/6 font-semibold text-white">Liens utiles</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.support" :key="item.name">
-                                    <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="mt-16 grid grid-cols-2 gap-8 xl:mt-0">
+                    <div>
+                        <h3 class="text-sm/6 font-semibold text-white">Plan du site</h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li v-for="item in navigation.solutions" :key="item.name">
+                                <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white link link-animated">{{ item.name }}</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm/6 font-semibold text-white">Nous contacter</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.company" :key="item.name">
-                                    <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="mt-10 md:mt-0">
+                        <h3 class="text-sm/6 font-semibold text-white">Liens utiles</h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li v-for="item in navigation.support" :key="item.name">
+                                <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white link link-animated">{{ item.name }}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -58,27 +46,13 @@ import ShapeTopAccent from '@/Components/ShapeTopAccent.vue';
 
 const navigation = {
     solutions: [
-        { name: 'Marketing', href: '#' },
-        { name: 'Analytics', href: '#' },
-        { name: 'Automation', href: '#' },
-        { name: 'Commerce', href: '#' },
-        { name: 'Insights', href: '#' },
-    ],
-    support: [
-        { name: 'Submit ticket', href: '#' },
-        { name: 'Documentation', href: '#' },
-        { name: 'Guides', href: '#' },
-    ],
-    company: [
-        { name: 'About', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Jobs', href: '#' },
-        { name: 'Press', href: '#' },
-    ],
-    legal: [
-        { name: 'Terms of service', href: '#' },
-        { name: 'Privacy policy', href: '#' },
-        { name: 'License', href: '#' },
+        { name: 'Accueil', href: route('welcome') },
+        { name: 'Offre de soins', href: route('offer') },
+        { name: 'Pour qui ?', href: route('who') },
+        { name: 'Notre équipe', href:route('team') },
+        { name: 'FAQ', href: route('faq') },
+        { name: 'Nous contacter', href: route('contact') },
+        { name: 'Mentions légales', href: '#' },
     ],
 }
 </script>

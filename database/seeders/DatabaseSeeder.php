@@ -98,5 +98,9 @@ class DatabaseSeeder extends Seeder
         DB::table('partners')->insert(['label' => 'CHRU', 'url' => '/images/Logo_CHU_Besancon-1814599075.jpg']);
         DB::table('partners')->insert(['label' => 'ARS', 'url' => '/images/ARS-Logo-920185936.png']);
         DB::table('partners')->insert(['label' => 'Polyclinique de Franche-Comté', 'url' => '/images/Arc_77xchqzNxg.png']);
+
+        DB::table('links')->insert(['label' => 'ARS', 'url' => 'https://www.ars.sante.fr/']);
+        DB::table('links')->insert(['label' => 'CHRU', 'url' => 'https://www.chu-besancon.fr/']);
+        DB::table('links')->insert(['label' => 'CH Novillars', 'url' => 'https://www.ch-novillars.fr/']);
     }
 }

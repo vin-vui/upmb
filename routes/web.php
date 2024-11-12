@@ -9,6 +9,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LinkController;
 
 /**
  * Guest routes
@@ -25,6 +26,7 @@ Route::get('/nous-contacter',                           function () { return Ine
  */
 Route::get('/get-cta',                                  [GuestController::class, 'cta']);
 Route::get('/get-notices',                              [GuestController::class, 'notices']);
+Route::get('/get-links',                                [GuestController::class, 'links']);
 
 /**
  * Authenticated routes
@@ -34,15 +36,23 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get(         'dashboard',                    [DashboardController::class, 'dashboard'])           ->name('dashboard');
-    Route::post(        'informations/{information}',   [DashboardController::class, 'updateInformation'])   ->name('informations.update');
-    Route::post(        'questions/reorder',            [QuestionController::class, 'reorder'])              ->name('questions.reorder');
+    /** Dashboard */
+    Route::get(         'dashboard',                    [DashboardController::class,    'dashboard'])           ->name('dashboard');
+    Route::post(        'informations/{information}',   [DashboardController::class,    'updateInformation'])   ->name('informations.update');
+    /** Questions */
     Route::resource(   'questions',                 QuestionController::class);
-    Route::resource(   'notices',                    NoticeController::class);
+    Route::post(        'questions/reorder',            [QuestionController::class,     'reorder'])             ->name('questions.reorder');
+    /** Notices */
+    Route::resource(   'notices',                   NoticeController::class);
+    /** Partners */
     Route::resource(   'partners',                  PartnerController::class);
-    Route::get(         'sections/welcome',             [SectionController::class, 'welcome'])               ->name('sections.welcome');
-    Route::post(        'sections/{section}',           [SectionController::class, 'update'])                ->name('sections.update');
-    Route::post(        'items/{item}',                 [SectionController::class, 'updateItem'])            ->name('items.update');
-    Route::post(        'items',                        [SectionController::class, 'newItem'])               ->name('items.store');
-    Route::delete(      'items/{item}',                 [SectionController::class, 'deleteItem'])            ->name('items.destroy');
+    /** Links */
+    Route::resource(   'links',                     LinkController::class);
+    Route::post(        'links/reorder',                [LinkController::class,         'reorder'])             ->name('links.reorder');
+    /** Sections */
+    Route::get(         'sections/welcome',             [SectionController::class,      'welcome'])             ->name('sections.welcome');
+    Route::post(        'sections/{section}',           [SectionController::class,      'update'])              ->name('sections.update');
+    Route::post(        'items/{item}',                 [SectionController::class,      'updateItem'])          ->name('items.update');
+    Route::post(        'items',                        [SectionController::class,      'newItem'])             ->name('items.store');
+    Route::delete(      'items/{item}',                 [SectionController::class,      'deleteItem'])          ->name('items.destroy');
 });

@@ -17,7 +17,7 @@
                     <div>
                         <h3 class="text-sm/6 font-semibold text-white">Plan du site</h3>
                         <ul role="list" class="mt-6 space-y-4">
-                            <li v-for="item in navigation.solutions" :key="item.name">
+                            <li v-for="item in solutions" :key="item.name">
                                 <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white link link-animated">{{ item.name }}</a>
                             </li>
                         </ul>
@@ -25,8 +25,8 @@
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm/6 font-semibold text-white">Liens utiles</h3>
                         <ul role="list" class="mt-6 space-y-4">
-                            <li v-for="item in navigation.support" :key="item.name">
-                                <a :href="item.href" class="text-sm/6 text-gray-50 hover:text-white link link-animated">{{ item.name }}</a>
+                            <li v-for="item in links" :key="item.label">
+                                <a :href="item.url" class="text-sm/6 text-gray-50 hover:text-white link link-animated">{{ item.label }}</a>
                             </li>
                         </ul>
                     </div>
@@ -40,19 +40,36 @@
     </footer>
   </template>
 
-<script setup>
+<script>
 import Contact from '@/Pages/Guest/_Contact.vue';
 import ShapeTopAccent from '@/Components/ShapeTopAccent.vue';
 
-const navigation = {
-    solutions: [
-        { name: 'Accueil', href: route('welcome') },
-        { name: 'Offre de soins', href: route('offer') },
-        { name: 'Pour qui ?', href: route('who') },
-        { name: 'Notre équipe', href:route('team') },
-        { name: 'FAQ', href: route('faq') },
-        { name: 'Nous contacter', href: route('contact') },
-        { name: 'Mentions légales', href: '#' },
-    ],
-}
+export default {
+    components: {
+        Contact,
+        ShapeTopAccent,
+    },
+    data() {
+        return {
+            links: [],
+            solutions: [
+                { name: 'Accueil', href: route('welcome') },
+                { name: 'Offre de soins', href: route('offer') },
+                { name: 'Pour qui ?', href: route('who') },
+                { name: 'Notre équipe', href:route('team') },
+                { name: 'FAQ', href: route('faq') },
+                { name: 'Nous contacter', href: route('contact') },
+                { name: 'Mentions légales', href: '#' },
+            ],
+        };
+    },
+    async mounted() {
+        try {
+            const response = await axios.get('/get-links');
+            this.links = response.data;
+        } catch (error) {
+            console.error('Erreur lors du chargement des liens :', error);
+        }
+    },
+};
 </script>

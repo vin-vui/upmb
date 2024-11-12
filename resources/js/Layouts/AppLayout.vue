@@ -31,6 +31,9 @@
                         <NavLink :href="route('partners.index')" :active="route().current('partners.*')">
                             Partenaires
                         </NavLink>
+                        <NavLink :href="route('links.index')" :active="route().current('links.*')">
+                            Liens Utiles
+                        </NavLink>
                         <Menu as="div" class="relative inline-block text-left z-50">
                             <div>
                                 <MenuButton class="inline-flex items-center w-full justify-center py-2 px-4 border-b-2 border-transparent rounded-3xl font-bold leading-5 text-gray-500 hover:text-gray-700 capitalize hover:border-gray-300 focus:outline-none font-annie focus:text-gray-700 text-xl focus:border-gray-300 transition duration-150 ease-in-out">

@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
+            $table->string('identifier')->unique();
             $table->string('title');
-            $table->string('label')->nullable();
+            $table->string('label');
             $table->timestamps();
         });
     }

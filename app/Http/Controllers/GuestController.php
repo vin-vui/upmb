@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Inertia;
-
 use App\Models\Link;
+
+use Inertia\Inertia;
 use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Section;
 use App\Models\Question;
+use App\Models\Information;
 
 class GuestController extends Controller
 {
@@ -30,9 +31,17 @@ class GuestController extends Controller
         return Inertia::render('Guest/Faq', compact('questions'));
     }
 
+    public function contact(): \Inertia\Response
+    {
+        $informations = Information::all();
+        $cta = $this->cta();
+
+        return Inertia::render('Guest/Contact', compact('informations', 'cta'));
+    }
+
     public function cta()
     {
-        $cta = Section::whereIn('identifier', ['CTA'])->first();
+        $cta = Section::where('identifier', 'CTA')->first();
 
         return $cta;
     }

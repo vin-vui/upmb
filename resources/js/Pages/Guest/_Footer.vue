@@ -1,6 +1,8 @@
 <template>
 
-    <Contact />
+    <div v-if="!isContactPage">
+        <Contact />
+    </div>
 
     <ShapeTopAccent />
 
@@ -63,13 +65,18 @@ export default {
             ],
         };
     },
+    computed: {
+        isContactPage() {
+            return route().current('contact');
+        },
+    },
     async mounted() {
         try {
             const response = await axios.get('/get-links');
             this.links = response.data;
         } catch (error) {
             console.error('Erreur lors du chargement des liens :', error);
-        }
+        };
     },
 };
 </script>

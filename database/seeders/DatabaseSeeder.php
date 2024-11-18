@@ -20,13 +20,13 @@ class DatabaseSeeder extends Seeder
 
         DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l\'affichage 🤩', 'display' => true]);
 
-        DB::table('informations')->insert(['title' => 'adresse',    'label' => 'Parc ALPIA, 8A rue Jacquard, 25000 Besançon']);
-        DB::table('informations')->insert(['title' => 'email',      'label' => 'secretariat.resado@ch-novillars.fr']);
-        DB::table('informations')->insert(['title' => 'téléphone',  'label' => '03 81 88 33 62']);
-        DB::table('informations')->insert(['title' => 'facebook',   'label' => 'https://www.facebook.com/profile.php?id=100054914929152']);
-        DB::table('informations')->insert(['title' => 'accès bus',  'label' => 'Ligne 10 - arrêt centre de tri']);
-        DB::table('informations')->insert(['title' => 'accès bus',  'label' => 'Ligne 7 - arrêt Kennedy']);
-        DB::table('informations')->insert(['title' => 'plaquette',  'label' => '']);
+        DB::table('informations')->insert(['identifier' => 'ADDRESS',   'title' => 'adresse',    'label' => 'Parc ALPIA, 8A rue Jacquard, 25000 Besançon']);
+        DB::table('informations')->insert(['identifier' => 'EMAIL',     'title' => 'email',      'label' => 'secretariat.resado@ch-novillars.fr']);
+        DB::table('informations')->insert(['identifier' => 'PHONE',     'title' => 'téléphone',  'label' => '03 81 88 33 62']);
+        DB::table('informations')->insert(['identifier' => 'FB',        'title' => 'facebook',   'label' => 'https://www.facebook.com/profile.php?id=100054914929152']);
+        DB::table('informations')->insert(['identifier' => 'BUS_1',     'title' => 'accès bus',  'label' => 'Ligne 10 - arrêt centre de tri']);
+        DB::table('informations')->insert(['identifier' => 'BUS_2',     'title' => 'accès bus',  'label' => 'Ligne 7 - arrêt Kennedy']);
+        DB::table('informations')->insert(['identifier' => 'DOC',       'title' => 'plaquette',  'label' => '']);
 
         DB::table('sections')->insert([
             'title' => 'Unité d’Accueil Père-Mère-Bébé',
@@ -78,8 +78,8 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('sections')->insert([
             'title' => 'Besoin d\'un petit coup de fil ?',
-            'paragraph' => 'Envie de parler ou de venir nous voir ? Notre équipe est là pour vous écouter et répondre à toutes vos questions. Un simple appel peut faire toute la différence !',
-            'image' => '/images/illu_2.webp',
+            'paragraph' => 'Envie de parler ou de venir nous voir ? Notre équipe est là pour vous écouter et répondre à toutes vos questions. Un simple échange peut faire toute la différence !',
+            'image' => '/images/illu_2.jpg',
             'identifier' => 'CTA',
         ]);
 

@@ -136,6 +136,4 @@ const bus_2 = computed(() => filterInformation("BUS_2"));
 const fb = computed(() => filterInformation("FB"));
 const doc = computed(() => filterInformation("DOC"));
 const linkMap = computed(() => mapsLink(filterInformation("ADDRESS")));
-
-console.log(doc.value);
 </script>

@@ -2,7 +2,7 @@
 <GuestLayout title="Nous Contacter">
     <section class="overflow-hidden pt-24 pb-48">
         <div class="mx-auto container md:px-6 lg:px-8">
-            <div class="grid grid-cols-3 gap-8">
+            <div class="grid grid-cols-3 gap-10">
                 <div class="col-span-2">
                     <h2 class="h2">Nous Contacter</h2>
                     <p class="mt-6 text-gray-900" v-html=cta.paragraph></p>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-center h-full">
-                    <img class="w-full object-contain rounded-3xl" src="/images/illu_2.jpg" alt="">
+                    <img class="h-96 w-full flex-none rounded-2xl object-cover lg:aspect-square lg:h-auto lg:max-w-sm shadow-xl shadow-accent/50 rotate-2" :src=cta.image alt="Image d'illustration pour le contact" />
                 </div>
             </div>
         </div>

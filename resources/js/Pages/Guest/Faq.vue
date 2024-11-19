@@ -66,8 +66,8 @@
                             <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
                                 <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                                 <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                                    <video class="w-full rounded-tl-3xl" controls >
-                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                    <video class="w-full rounded-tl-3xl" controls poster="/images/illu_unite.webp" width="640" height="360">
+                                        <source src="/videos/presentation.mp4" type="video/mp4">
                                         Votre navigateur ne supporte pas la balise vidéo.
                                     </video>
                                 </div>
@@ -76,8 +76,8 @@
                             <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
                                 <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                                 <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                                    <video class="w-full rounded-tl-3xl" controls >
-                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                    <video class="w-full rounded-tl-3xl" controls poster="/images/illu_papa.webp" width="640" height="360" >
+                                        <source src="/videos/les_peres.mp4" type="video/mp4">
                                         Votre navigateur ne supporte pas la balise vidéo.
                                     </video>
                                 </div>
@@ -86,8 +86,8 @@
                             <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
                                 <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                                 <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                                    <video class="w-full rounded-tl-3xl" controls >
-                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                    <video class="w-full rounded-tl-3xl" controls poster="/images/illu_groupe.webp" width="640" height="360">
+                                        <source src="/videos/groupe.mp4" type="video/mp4">
                                         Votre navigateur ne supporte pas la balise vidéo.
                                     </video>
                                 </div>
@@ -96,8 +96,8 @@
                             <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
                                 <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                                 <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                                    <video class="w-full rounded-tl-3xl" controls >
-                                        <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                                    <video class="w-full rounded-tl-3xl" controls poster="/images/illu_temoignages.webp" width="640" height="360">
+                                        <source src="/videos/temoignages.mp4" type="video/mp4">
                                         Votre navigateur ne supporte pas la balise vidéo.
                                     </video>
                                 </div>

@@ -108,7 +108,7 @@
     <ShapeTopWhite />
 
     <!-- Notre Offre de Soin -->
-    <section class="relative isolate pt-24 pb-48 overflow-hidden ">
+    <section class="relative isolate pt-24 mb-24 pb-48 overflow-hidden ">
         <div class="relative z-10 container mx-auto px-4">
             <div class="md:max-w-3xl md:mx-auto">
                 <h2 class="h2">{{ offerSection.title }}</h2>
@@ -199,8 +199,8 @@
                     <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none shadow-xl shadow-accent/50">
                         <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                         <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                            <video class="w-full rounded-tl-3xl" controls >
-                                <source src="/videos/placeholder.mp4#t=3,16" type="video/mp4">
+                            <video class="w-full rounded-tl-3xl" controls poster="/images/illu_unite.webp" width="640" height="360">
+                                <source src="/videos/presentation.mp4" type="video/mp4">
                                 Votre navigateur ne supporte pas la balise vidéo.
                             </video>
                         </div>

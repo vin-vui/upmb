@@ -13,17 +13,17 @@
                     <h2 class="h2 text-accent">{{ missionsSection.title }}</h2>
                     <p v-html=missionsSection.paragraph></p>
                 </div>
-                <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square h-[40rem] mt-8"
+                <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square md:h-[40rem] mt-8"
                     :src=missionsSection.image
                     alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
             </div>
-            <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default">
+            <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
                 <div v-for="mission in missionsSection.items" class="bordered-card">
-                    <div class="bg-white rounded-3xl py-8 px-4 flex items-center h-full text-neutral-600 tracking-tight text-lg font-medium gap-4">
+                    <div class="bg-white rounded-3xl md:py-8 py-4 md:px-4 px-2 flex items-center h-full  gap-4">
                         <div class="w-6">
                             <svg class="size-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
                         </div>
-                        {{ mission.content }}
+                        <p class="text-neutral-600 tracking-tight text-lg font-medium text-balance">{{ mission.content }}</p>
                     </div>
                 </div>
             </div>
@@ -36,15 +36,15 @@
     <ShapeTopPrimaryLight />
 
     <!-- Notre Historique -->
-    <section class="bg-primary/30 pb-24">
+    <section class="bg-primary/30 pb-24 px-4 sm:px-0">
         <div class="pt-18 sm:pt-24 pb-24 sm:pb-32 container mx-auto">
             <div class="mx-auto max-w-2xl lg:text-center mb-12">
                 <h2 class="h2">{{ historySection.title }}</h2>
                 <p v-html="historySection.paragraph"></p>
             </div>
             <div class="flex flex-wrap items-center justify-between">
-                <div class="bordered-card md:w-2/3">
-                    <div class="bg-white flex flex-col md:flex-row gap-4 p-10 rounded-3xl">
+                <div class="bordered-card lg:w-2/3">
+                    <div class="bg-white flex flex-col lg:flex-row gap-4 p-4 md:p-10 rounded-3xl">
                         <div class="w-full xl:w-1/3">
                             <div class="flex flex-col mb-5 gap-2">
                                 <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/3 pl-10">
+                <div class="w-full lg:w-1/3 md:pl-10 pt-10 lg:pt-0">
                     <div class="h-full">
                         <h3 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs cursor-default">
                             Il est <span class="bg-accent font-averia rounded-lg px-4 inline-block text-neutral-100">ouvert</span>
@@ -224,7 +224,7 @@
                 <div class="w-full md:w-1/2 p-6">
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start -m-5">
                         <div v-for="partner in partners" class="w-auto bordered-card">
-                            <img class="h-36 p-4 bg-white rounded-3xl" :src=partner.url alt="">
+                            <img class="lg:h-36 h-24 p-4 bg-white rounded-3xl" :src=partner.url alt="">
                         </div>
                     </div>
                 </div>

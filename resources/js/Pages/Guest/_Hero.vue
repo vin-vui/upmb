@@ -1,7 +1,7 @@
 <template>
 <section class="-mt-32 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/30 to-primary/40 background-animate overflow-hidden">
     <div class="container mx-auto px-4">
-        <div class="flex flex-wrap items-center -m-6 pt-64 pb-36">
+        <div class="flex flex-wrap items-center -m-6 pt-44 lg:pt-64 pb-36">
             <div class="w-full lg:w-1/2 p-6">
                 <div class="lg:max-w-xl">
                     <h1 class="h1 -rotate-1">{{ title }}</h1>

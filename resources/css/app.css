@@ -20,7 +20,7 @@
     }
 
     p {
-        @apply text-neutral-600 tracking-tight text-2xl font-semibold text-balance cursor-default;
+        @apply text-neutral-600 tracking-tight text-xl md:text-2xl font-semibold text-balance cursor-default;
     }
 
     .bordered-card {

@@ -1,8 +1,10 @@
 <template>
     <GuestLayout title="FAQ">
+
+        <!-- FAQ -->
         <section class="-mt-32 pb-32 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/30 to-primary/40 background-animate overflow-hidden">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-3 gap-8 -m-6 pt-64 pb-36">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-36 md:pt-64 pb-36">
                     <div class="">
                         <h2 class="h2">Foire aux Questions</h2>
                         <p class="mb-8">Vous ne trouvez pas la réponse que vous cherchez ? Contactez notre équipe.</p>
@@ -18,7 +20,7 @@
                                 :class="{ 'active': index === 0 }"
                             >
                                 <button
-                                    class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 font-averia text-xl font-bold leading-10 tracking-tight text-gray-900"
+                                    class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 font-averia md:text-xl font-bold md:leading-10 text-start tracking-tight text-gray-900"
                                     :aria-controls="'faq-popout-collapse-' + index"
                                     :aria-expanded="index === 0"
                                 >
@@ -49,7 +51,10 @@
                 </div>
             </div>
         </section>
+
         <ShapeTopSecondary />
+
+        <!-- Videos -->
         <section class="overflow-hidden bg-secondary pt-24 pb-48">
             <div class="mx-auto container md:px-6 lg:px-8">
                 <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-3 lg:items-start">
@@ -62,7 +67,7 @@
                         </div>
                     </div>
                     <div class="sm:px-6 lg:px-0 lg:col-span-2">
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid md:grid-cols-2 gap-8 md:gap-4">
                             <div class="relative isolate overflow-hidden bg-accent px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-8 sm:pr-0 sm:pt-8 lg:mx-0 shadow-xl shadow-accent/50">
                                 <div class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white" aria-hidden="true" />
                                 <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">

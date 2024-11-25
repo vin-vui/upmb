@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-16 mb-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 md:flex items-center justify-between">
+            <div class="mt-16 mb-24 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 md:flex items-center justify-between">
                 <p class="text-sm/6 text-gray-50">&copy; 2025 Unité Père Mère Bébé, CH Novillars, Tous droits réservés.</p>
                 <p class="text-sm/6 text-gray-50">Conçu et développé avec ❤️ par Vinvui</p>
             </div>

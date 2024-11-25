@@ -4,7 +4,7 @@
         <div class="min-h-screen">
 
             <header class="">
-                <nav class="mx-auto flex items-center justify-between p-6 lg:py-0 lg:px-8" aria-label="Global">
+                <nav class="mx-auto flex items-center justify-between p-6 xl:py-0 lg:px-8" aria-label="Global">
                     <a href="#" class="flex items-center gap-2">
                         <img class="xl:h-24 h-12" src="/images/logo.png" alt="Logo de l'unité père mère bébé">
                         <span class="font-annie font-bold xl:text-5xl md:text-3xl text-xl">Unité Père Mère Bébé</span>

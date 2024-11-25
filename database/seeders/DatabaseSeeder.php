@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
         ]);
 
-        DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l\'affichage 🤩', 'display' => true]);
+        DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l\'affichage 🤩', 'display' => false]);
 
         DB::table('informations')->insert(['identifier' => 'ADDRESS',   'title' => 'adresse',    'label' => 'Parc ALPIA, 8A rue Jacquard, 25000 Besançon']);
         DB::table('informations')->insert(['identifier' => 'EMAIL',     'title' => 'email',      'label' => 'secretariat.resado@ch-novillars.fr']);
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'identifier' => 'OFFER',
         ]);
         DB::table('sections')->insert([
-            'title' => 'Témoignage',
+            'title' => 'Film de présentation',
             'paragraph' => 'Plongez au cœur de notre unité et découvrez comment nous <strong>accompagnons les familles au quotidien</strong>. À travers cette vidéo, explorez notre approche bienveillante et notre engagement auprès des parents et de leurs tout-petits.',
             'image' => null,
             'identifier' => 'TESTIMONY',
@@ -82,6 +82,44 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_2.jpg',
             'identifier' => 'CTA',
         ]);
+        DB::table('sections')->insert([
+            'title' => 'Offre de soins',
+            'paragraph' => 'L’accueil parents bébé est ouvert aux parents et à leur bébé, dès la sortie de la maternité ou de néonatologie. Dans ce lieu il est possible de parler des questions ou des inquiétudes qui peuvent surgir à la naissance d’un enfant ou dans les mois qui suivent (allaitement, sevrage, pleurs, problèmes de sommeil, difficultés d’alimentation, fatigue, tristesse…)',
+            'image' => '/images/illu_offers.webp',
+            'identifier' => 'OFFERS',
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'OFFERS', 'content' => 'Horaires d’ouverture']);
+        DB::table('items')->insert(['section_identifier' => 'OFFERS', 'content' => 'Mardi, jeudi, vendredi de 9 à 11h, le mercredi de 14 à 16 h. Accueil avec ou sans rendez-vous (mais il préférable de prévenir de votre venue particulièrement si vous venez pour la première fois). A la demande spontané d’un parent ou sur orientation professionnel, pour les parents et les enfants jusqu’à deux ans.']);
+        DB::table('sections')->insert([
+            'title' => 'Accueil Parents-Bébé',
+            'paragraph' => 'L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et psychologiques pendant la grossesse et/ou dès la sortie de maternité. Elle accueille les futurs parents, les mères, les pères et leur bébé jusqu’aux 2 ans de leur enfant :',
+            'image' => '/images/illu_offer_pb.webp',
+            'identifier' => 'OFFER_PB',
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Soit']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'parce qu’elles se sentent seules, isolées, démunies, vulnérables devant un bébé qu’elles ont du mal à comprendre.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Soit']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'parce que le bébé, lui-même présente des difficultés, ce qui rend la relation difficile.']);
+        DB::table('sections')->insert([
+            'title' => 'Les groupes de parole',
+            'paragraph' => 'Modifications du corps, questions sur l’accouchement, la douleur, la césarienne, la péridurale, modes d’alimentation, développement du bébé. Difficultés psychiques, décalage entre idéal et vécu de la grossesse, anxiété, dépression. Événements inattendus (deuil, séparation, maladie). Contexte singulier (solitude, problèmes médicaux, PMA, problèmes de couple…).',
+            'image' => '/images/illu_offer_gp_2.webp',
+            'identifier' => 'OFFER_GP',
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Pour les femmes enceintes']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Pour parler de la grossesse et de ses préoccupations']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Accueil avec ou sans rendez-vous']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Lundi de 15h30 à 16h 30 Jeudi de 13 à 14h En petit groupe, accessible directement ou sur les conseils d’un professionnel (sage- femme, gynécologue, généraliste, PMI, pédiatre, psychologie, psychiatre, crèche…)']);
+        DB::table('sections')->insert([
+            'title' => 'Les groupes de parole',
+            'paragraph' => 'Une psychologue et une infirmière de l’équipe accueillent les pères ou futurs pères du début de la grossesse de leur conjointe, jusqu’aux deux ans de l’enfant, pour évoquer les préoccupations qui accompagnent leur rôle et préoccupations de père : • difficultés psychiques (décalage entre le vécu imaginaire et la réalité de l’arrivée de l’enfant) • événements inattendus (deuil, séparation,, maladie…) • contexte singulier de la grossesse (solitude, problèmes médicaux, problèmes de couple, PMA…). C’est un temps collectif où les hommes peuvent partager leurs expériences et leurs inquiétudes à un moment commun de leur vie. Toutes les pères, peuvent participer à cet accueil, à leur initiative ou sur les conseils d’un professionnel (sage-femme, gynécologue, généraliste, PMI, pédiatres, psychologues, psychiatres, crèches…',
+            'image' => '/images/illu_offer_gp_3.webp',
+            'identifier' => 'OFFER_GPP',
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Pour les pères et futurs pères']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Pour évoquer les préoccupations qui accompagnent leur rôle de père']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Accueil avec ou sans rendez-vous']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Un lundi par mois de 18 à 19H. Dates nous contacter']);
 
         DB::table('questions')->insert(['question' => 'Quels sont les horaires d\'ouverture de l\'unité ?', 'answer' => 'Nous sommes ouverts du lundi au vendredi, de 9h à 17h.']);
         DB::table('questions')->insert(['question' => 'Comment prendre rendez-vous ?', 'answer' => 'Vous pouvez nous contacter par téléphone au 03 81 88 33 62, ou par email à l\'adresse adresse@test.com.']);

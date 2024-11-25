@@ -24,6 +24,13 @@ class GuestController extends Controller
         return Inertia::render('Guest/Welcome', compact('partners', 'sections'));
     }
 
+    public function offer(): \Inertia\Response
+    {
+        $sections = Section::whereIn('identifier', values: ['OFFERS', 'OFFER_PB', 'OFFER_GP', 'OFFER_GPP'])->with('items')->get();
+
+        return Inertia::render('Guest/Offer', compact('sections'));
+    }
+
     public function faq(): \Inertia\Response
     {
         $questions = Question::orderBy('order')->get();

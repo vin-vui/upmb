@@ -9,7 +9,7 @@
                     <ContactButton />
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 p-6 rounded-3xl">
+            <div class="w-full lg:w-1/2 rounded-3xl border border-accent/50">
                 <img class="block mx-auto rounded-3xl rotate-2 shadow-accent/80 shadow-2xl" :src=image alt="Illustration d'un téléphone jouet">
             </div>
         </div>

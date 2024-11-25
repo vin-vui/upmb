@@ -13,9 +13,11 @@
                     <h2 class="h2 text-accent">{{ missionsSection.title }}</h2>
                     <p v-html=missionsSection.paragraph></p>
                 </div>
-                <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square md:h-[40rem] mt-8"
-                    :src=missionsSection.image
-                    alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
+                <div class="rounded-3xl border border-accent/50 mt-8">
+                    <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square"
+                        :src=missionsSection.image
+                        alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
+                </div>
             </div>
             <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
                 <div v-for="mission in missionsSection.items" class="bordered-card">

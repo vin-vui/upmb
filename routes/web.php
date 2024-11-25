@@ -14,19 +14,19 @@ use App\Http\Controllers\LinkController;
 /**
  * Guest routes
  */
-Route::get('/',                                         [GuestController::class, 'welcome'])                                            ->name('welcome');
-Route::get('/offre-de-soins',                           function () { return Inertia::render('Guest/Offer'); })    ->name('offer');
-Route::get('/pour-qui',                                 function () { return Inertia::render('Guest/Who'); })      ->name('who');
-Route::get('/notre-equipe',                             function () { return Inertia::render('Guest/Team'); })     ->name('team');
-Route::get('/foire-aux-questions',                      [GuestController::class, 'faq'])                                                ->name('faq');
-Route::get('/nous-contacter',                           [GuestController::class, 'contact'])                                            ->name('contact');
+Route::get('/',                    [GuestController::class, 'welcome']) ->name('welcome');
+Route::get('/offre-de-soins',      [GuestController::class, 'offer'])   ->name('offer');
+Route::get('/foire-aux-questions', [GuestController::class, 'faq'])     ->name('faq');
+Route::get('/nous-contacter',      [GuestController::class, 'contact']) ->name('contact');
+// Route::get('/pour-qui',                                 function () { return Inertia::render('Guest/Who'); })      ->name('who');
+// Route::get('/notre-equipe',                             function () { return Inertia::render('Guest/Team'); })     ->name('team');
 
 /**
  * API routes
  */
-Route::get('/get-cta',                                  [GuestController::class, 'cta']);
-Route::get('/get-notices',                              [GuestController::class, 'notices']);
-Route::get('/get-links',                                [GuestController::class, 'links']);
+Route::get('/get-cta',      [GuestController::class, 'cta']);
+Route::get('/get-notices',  [GuestController::class, 'notices']);
+Route::get('/get-links',    [GuestController::class, 'links']);
 
 /**
  * Authenticated routes

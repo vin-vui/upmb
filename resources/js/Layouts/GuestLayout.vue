@@ -83,9 +83,9 @@
     const showScrollButton = ref(false);
     const mobileMenuOpen = ref(false)
     const navigation = [
-        { name: 'Accueil',          href: route('welcome'), current: route().current('welcome') },
-        { name: 'Offre de soins',   href: route('offer'),   current: route().current('offer') },
-        { name: 'FAQ',              href: route('faq'),     current: route().current('faq') },
+        { name: 'Accueil',              href: route('welcome'), current: route().current('welcome') },
+        { name: 'Notre offre de soin',  href: route('offer'),   current: route().current('offer') },
+        { name: 'FAQ',                  href: route('faq'),     current: route().current('faq') },
     ]
 
     const handleScroll = () => {

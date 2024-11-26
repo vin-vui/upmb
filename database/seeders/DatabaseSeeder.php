@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('sections')->insert([
-            'title' => 'Offre de soins',
+            'title' => 'Notre offre de soin',
             'paragraph' => 'L’accueil parents bébé est ouvert aux parents et à leur bébé, dès la sortie de la maternité ou de néonatologie. Dans ce lieu il est possible de parler des questions ou des inquiétudes qui peuvent surgir à la naissance d’un enfant ou dans les mois qui suivent (allaitement, sevrage, pleurs, problèmes de sommeil, difficultés d’alimentation, fatigue, tristesse…)',
             'image' => '/images/illu_offers.webp',
             'identifier' => 'OFFERS',

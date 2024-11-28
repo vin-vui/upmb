@@ -112,63 +112,62 @@ class DatabaseSeeder extends Seeder
         /*
         * ONGLET OFFRE DE SOIN
         */
+        // GENERAL
         DB::table('sections')->insert([
             'title' => 'Notre offre de soin',
             'paragraph' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.',
             'image' => '/images/illu_offers.webp',
             'identifier' => 'OFFERS',
         ]);
+        // ACCUEIL PARENTS-BEBE
         DB::table('sections')->insert([
             'title' => 'Accueil Parents-Bébé',
             'paragraph' => 'L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et psychologiques pendant la grossesse et/ou dès la sortie de maternité. Elle accueille les futurs parents, les mères, les pères et leur bébé jusqu’aux 2 ans de leur enfant :',
             'image' => '/images/illu_offer_pb.webp',
             'identifier' => 'OFFER_PB',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Soit']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'parce qu’elles se sentent seules, isolées, démunies, vulnérables devant un bébé qu’elles ont du mal à comprendre.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Soit']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'parce que le bébé, lui-même présente des difficultés, ce qui rend la relation difficile.']);
-
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        // GROUPES DE PAROLE FEMMES ENCEINTES
         DB::table('sections')->insert([
-            'title' => 'Les groupes de parole',
+            'title' => 'Les groupes de parole pour les femmes enceintes',
             'paragraph' => 'Modifications du corps, questions sur l’accouchement, la douleur, la césarienne, la péridurale, modes d’alimentation, développement du bébé. Difficultés psychiques, décalage entre idéal et vécu de la grossesse, anxiété, dépression. Événements inattendus (deuil, séparation, maladie). Contexte singulier (solitude, problèmes médicaux, PMA, problèmes de couple…).',
             'image' => '/images/illu_offer_gp_2.webp',
             'identifier' => 'OFFER_GP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Pour les femmes enceintes']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Pour parler de la grossesse et de ses préoccupations']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Accueil avec ou sans rendez-vous']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Lundi de 15h30 à 16h 30 Jeudi de 13 à 14h En petit groupe, accessible directement ou sur les conseils d’un professionnel (sage- femme, gynécologue, généraliste, PMI, pédiatre, psychologie, psychiatre, crèche…)']);
-
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        // GROUPES DE PAROLE PERES
         DB::table('sections')->insert([
-            'title' => 'Les groupes de parole',
-            'paragraph' => 'Une psychologue et une infirmière de l’équipe accueillent les pères ou futurs pères du début de la grossesse de leur conjointe, jusqu’aux deux ans de l’enfant, pour évoquer les préoccupations qui accompagnent leur rôle et préoccupations de père : • difficultés psychiques (décalage entre le vécu imaginaire et la réalité de l’arrivée de l’enfant) • événements inattendus (deuil, séparation,, maladie…) • contexte singulier de la grossesse (solitude, problèmes médicaux, problèmes de couple, PMA…). C’est un temps collectif où les hommes peuvent partager leurs expériences et leurs inquiétudes à un moment commun de leur vie. Toutes les pères, peuvent participer à cet accueil, à leur initiative ou sur les conseils d’un professionnel (sage-femme, gynécologue, généraliste, PMI, pédiatres, psychologues, psychiatres, crèches…',
+            'title' => 'Les groupes de parole pour les pères',
+            'paragraph' => 'C’est un temps collectif où les hommes peuvent partager leurs expériences et leurs inquiétudes à un moment commun de leur vie. Tous les pères, peuvent participer à cet accueil, à leur initiative ou sur les conseils d’un professionnel. Les groupes de parole sont animés par un psychologue ou un professionnel de la petite enfance.',
             'image' => '/images/illu_offer_gp_3.webp',
             'identifier' => 'OFFER_GPP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Pour les pères et futurs pères']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Pour évoquer les préoccupations qui accompagnent leur rôle de père']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Accueil avec ou sans rendez-vous']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Un lundi par mois de 18 à 19H. Dates nous contacter']);
-
-        DB::table('sections')->insert([
-            'title' => 'L’hôpital de jour Mère-Bébé',
-            'paragraph' => 'Ce temps d’accueil permet de travailler les interactions, le lien et la séparation mère-bébé à travers différents temps : un étayage des soins quotidiens ( bains, change, repas, portage…), des médiations thérapeutiques centrées sur l’instauration des premiers jeux, des médiations suscitant la créativité des mères, des ateliers d’éveils corporels ou sensoriels avec le bébé, des séances de travail corporel avec les mères, des temps individuels avec la mère et /ou le bébé.',
-            'image' => '/images/illu_offer_hjmb.webp',
-            'identifier' => 'OFFER_HJMB',
-        ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Accueil sur indication médicale']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Pour la mère et son enfant jusqu’au trois ans de ce dernier. Hôpital de jour ouvert sur cinq demi-journées par semaine sur quatre heures comprenant un repas thérapeutique.']);
-
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        // CONSULTATIONS PERINATALES
         DB::table('sections')->insert([
             'title' => 'Les consultations périnatales',
             'paragraph' => 'Les consultations périnatales auprès d’un pédopsychiatre ou psychologue offrent un espace d’écoute et d’accompagnement pour les parents ou futurs parents qui traversent des moments difficiles autour de la périnatalité. Ces consultations permettent de parler de diverses problématiques, telles que : Les fausses couches, L’infertilité, La grossesse à risque, La dépression post-partum, Les difficultés dans le lien parent-enfant. Ces consultations permettent d\’offrir un soutien adapté et bienveillant, favorisant un mieux-être pour la famille et aidant à construire un environnement émotionnel sain pour l’enfant dès le début de sa vie.',
             'image' => '/images/illu_offer_cp.webp',
             'identifier' => 'OFFER_CP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Accueil sur indication médicale']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Pour la mère et son enfant jusqu’au trois ans de ce dernier. Hôpital de jour ouvert sur cinq demi-journées par semaine sur quatre heures comprenant un repas thérapeutique.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        // HOPITAL DE JOUR MERE-BEBE
+        DB::table('sections')->insert([
+            'title' => 'L’hôpital de jour Mère-Bébé',
+            'paragraph' => 'Ce temps d’accueil permet de travailler les interactions, le lien et la séparation mère-bébé à travers différents temps : un étayage des soins quotidiens ( bains, change, repas, portage…), des médiations thérapeutiques centrées sur l’instauration des premiers jeux, des médiations suscitant la créativité des mères, des ateliers d’éveils corporels ou sensoriels avec le bébé, des séances de travail corporel avec les mères, des temps individuels avec la mère et /ou le bébé.',
+            'image' => '/images/illu_offer_hjmb.webp',
+            'identifier' => 'OFFER_HJMB',
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Du lundi au vendredi de 9h à 17h']);
 
+        /*
+        * ONGLET NOTRE EQUIPE
+        */
         DB::table('sections')->insert([
             'title' => 'Notre équipe',
             'paragraph' => 'Notre équipe est composée de professionnels de la santé et du social, spécialisés dans l’accompagnement des parents et des enfants. Nous sommes là pour vous écouter, vous conseiller, et vous accompagner à chaque étape de votre vie de parent.',

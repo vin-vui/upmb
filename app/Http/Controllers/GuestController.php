@@ -27,7 +27,7 @@ class GuestController extends Controller
 
     public function offer(): \Inertia\Response
     {
-        $sections = Section::whereIn('identifier', values: ['OFFERS', 'OFFER_PB', 'OFFER_GP', 'OFFER_GPP', 'OFFER_HJMB', 'OFFER_CP'])->with('items')->get();
+        $sections = Section::whereIn('identifier', values: ['OFFERS', 'OFFER_PB', 'OFFER_GP', 'OFFER_GPP', 'OFFER_HJMB', 'OFFER_CP'])->with('items')->orderBy('id')->get();
 
         return Inertia::render('Guest/Offer', compact('sections'));
     }

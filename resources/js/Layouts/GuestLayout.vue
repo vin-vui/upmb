@@ -1,13 +1,15 @@
 <template>
     <div class="overflow-x-hidden">
+
         <Head :title="title" />
+
         <div class="min-h-screen">
 
             <header class="">
                 <nav class="mx-auto flex items-center justify-between p-6 xl:py-0 lg:px-8" aria-label="Global">
                     <a href="#" class="flex items-center gap-2">
                         <img class="xl:h-24 h-12" src="/images/logo.png" alt="Logo de l'unité père mère bébé">
-                        <span class="font-annie font-bold xl:text-5xl md:text-3xl text-xl">Unité Père Mère Bébé</span>
+                        <span class="sr-only">Unité Père Mère Bébé</span>
                     </a>
                     <div class="flex lg:hidden">
                         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
@@ -83,11 +85,12 @@
     const showScrollButton = ref(false);
     const mobileMenuOpen = ref(false)
     const navigation = [
-        { name: 'Accueil',              href: route('welcome'), current: route().current('welcome') },
-        { name: 'Notre offre de soin',  href: route('offer'),   current: route().current('offer') },
-        { name: 'FAQ',                  href: route('faq'),     current: route().current('faq') },
+        { name: 'Accueil',              href: route('welcome'),     current: route().current('welcome') },
+        { name: 'Notre offre de soin',  href: route('offer'),       current: route().current('offer') },
+        { name: 'Nos missions',         href: route('missions'),    current: route().current('missions') },
+        { name: 'Notre équipe',         href: route('team'),        current: route().current('team') },
+        { name: 'FAQ',                  href: route('faq'),         current: route().current('faq') },
     ]
-
     const handleScroll = () => {
         showScrollButton.value = window.scrollY > 300;
     };

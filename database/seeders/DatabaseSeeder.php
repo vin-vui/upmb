@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['name' => 'Admin', 'email' => 'admin@admin.com']);
 
         // NOTICE
-        DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l\'affichage 🤩', 'display' => false]);
+        DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l’affichage 🤩', 'display' => false]);
 
         // INFORMATIONS
         DB::table('informations')->insert(['identifier' => 'ADDRESS',   'title' => 'adresse',    'label' => 'Parc ALPIA, 8A rue Jacquard, 25000 Besançon']);
-        DB::table('informations')->insert(['identifier' => 'EMAIL',     'title' => 'email',      'label' => 'secretariat.resado@ch-novillars.fr']);
+        DB::table('informations')->insert(['identifier' => 'EMAIL',     'title' => 'email',      'label' => 'email@email.fr']);
         DB::table('informations')->insert(['identifier' => 'PHONE',     'title' => 'téléphone',  'label' => '03 81 88 33 62']);
         DB::table('informations')->insert(['identifier' => 'FB',        'title' => 'facebook',   'label' => 'https://www.facebook.com/profile.php?id=100054914929152']);
         DB::table('informations')->insert(['identifier' => 'BUS_1',     'title' => 'accès bus',  'label' => 'Ligne 10 - arrêt centre de tri']);
@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
 
         // SECTIONS
         DB::table('sections')->insert([
-            'title' => 'Unité d’Accueil Père-Mère-Bébé',
-            'paragraph' => 'Un lieu d\'échange et de parole <strong>avec ou sans rendez-vous</strong>, pour les futurs parents et les parents, de la grossesse <strong>jusqu’aux 24 mois de l’enfant</strong>.',
-            'image' => '/images/illu_1.webp',
+            'title' => 'Un lieu d’<strong>accueil</strong>, d’<strong>échange</strong> et de <strong>soin</strong> autour de la parentalité.',
+            'paragraph' => 'L’Unité d’accueil père mère bébé est une structure dédiée aux parents et futurs parents et leur enfant, afin d’accompagner cette étape de vie fondamentale.',
+            'image' => null,
             'identifier' => 'HERO',
         ]);
 
@@ -47,7 +47,25 @@ class DatabaseSeeder extends Seeder
         DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir et/ou soigner les troubles psychopathologiques chez les parents.']);
         DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir et/ou soigner les troubles des interactions précoces mères-enfants ou parents-enfants.']);
         DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir les risques de maltraitance précoce.']);
-        DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir l\'installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant.']);
+        DB::table('items')->insert(['section_identifier' => 'MISSIONS', 'content' => 'Prévenir l’installation et/ou soigner les troubles psychopathologiques ou les troubles du développement chez le nourrisson et le jeune enfant.']);
+
+        DB::table('sections')->insert([
+            'title' => 'Pour qui ?',
+            'paragraph' => 'L’unité d’accueil Père-Mère-Bébé est ouverte à tous les parents et futurs parents, de la grossesse jusqu’aux 24 mois de l’enfant. Que vous soyez enceinte, jeune parent, ou parent d’un enfant en bas âge, vous êtes les bienvenus !',
+            'image' => '/images/illu_who.webp',
+            'identifier' => 'WHO',
+            'fixed_item_number' => false,
+        ]);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Je me sens seul(e)']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Je suis dépassé(e) par la situation']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Je n’arrive plus à dormir']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Je ne comprends pas ce que veut mon enfant']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé pleure tout le temps']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé ne dort pas']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé perd du poids']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé a des problèmes de peau']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé ne grandit pas normalement']);
+        DB::table('items')->insert(['section_identifier' => 'WHO', 'content' => 'Mon bébé n’est pas tonique']);
 
         DB::table('sections')->insert([
             'title' => 'Notre Historique',
@@ -61,6 +79,7 @@ class DatabaseSeeder extends Seeder
         DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'en 2007 à l’initiative de professionnelle du soin de la petite enfance ayant souhaité proposer un lieu d’accueil et d’accompagnement pouvant permettre en cas de besoin un lien entre la sortie de la maternité et l’accès aux soins de l’enfance.']);
         DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Il semblait par ailleurs']);
         DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des remaniements physiologiques, psychiques que pour l’enfant en plein développement.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Il est <strong>ouvert</strong> aux familles de la ville de Besançon mais aussi du Doubs et de la Région']);
 
         DB::table('sections')->insert([
             'title' => 'Notre Offre de Soin',
@@ -84,21 +103,21 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('sections')->insert([
-            'title' => 'Besoin d\'un petit coup de fil ?',
+            'title' => 'Besoin d’un petit coup de fil ?',
             'paragraph' => 'Envie de parler ou de venir nous voir ? Notre équipe est là pour vous écouter et répondre à toutes vos questions. Un simple échange peut faire toute la différence !',
             'image' => '/images/illu_2.jpg',
             'identifier' => 'CTA',
         ]);
 
+        /*
+        * ONGLET OFFRE DE SOIN
+        */
         DB::table('sections')->insert([
             'title' => 'Notre offre de soin',
-            'paragraph' => 'L’accueil parents bébé est ouvert aux parents et à leur bébé, dès la sortie de la maternité ou de néonatologie. Dans ce lieu il est possible de parler des questions ou des inquiétudes qui peuvent surgir à la naissance d’un enfant ou dans les mois qui suivent (allaitement, sevrage, pleurs, problèmes de sommeil, difficultés d’alimentation, fatigue, tristesse…)',
+            'paragraph' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.',
             'image' => '/images/illu_offers.webp',
             'identifier' => 'OFFERS',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFERS', 'content' => 'Horaires d’ouverture']);
-        DB::table('items')->insert(['section_identifier' => 'OFFERS', 'content' => 'Mardi, jeudi, vendredi de 9 à 11h, le mercredi de 14 à 16 h. Accueil avec ou sans rendez-vous (mais il préférable de prévenir de votre venue particulièrement si vous venez pour la première fois). A la demande spontané d’un parent ou sur orientation professionnel, pour les parents et les enfants jusqu’à deux ans.']);
-
         DB::table('sections')->insert([
             'title' => 'Accueil Parents-Bébé',
             'paragraph' => 'L’Accueil Parents-Bébé répond aux besoins de continuité et d’accompagnements médicaux et psychologiques pendant la grossesse et/ou dès la sortie de maternité. Elle accueille les futurs parents, les mères, les pères et leur bébé jusqu’aux 2 ans de leur enfant :',
@@ -143,22 +162,29 @@ class DatabaseSeeder extends Seeder
 
         DB::table('sections')->insert([
             'title' => 'Les consultations périnatales',
-            'paragraph' => 'Les consultations périnatales auprès d’un pédopsychiatre ou psychologue offrent un espace d\'écoute et d\'accompagnement pour les parents ou futurs parents qui traversent des moments difficiles autour de la périnatalité. Ces consultations permettent de parler de diverses problématiques, telles que : Les fausses couches, L\'infertilité, La grossesse à risque, La dépression post-partum, Les difficultés dans le lien parent-enfant. Ces consultations permettent d\’offrir un soutien adapté et bienveillant, favorisant un mieux-être pour la famille et aidant à construire un environnement émotionnel sain pour l’enfant dès le début de sa vie.',
+            'paragraph' => 'Les consultations périnatales auprès d’un pédopsychiatre ou psychologue offrent un espace d’écoute et d’accompagnement pour les parents ou futurs parents qui traversent des moments difficiles autour de la périnatalité. Ces consultations permettent de parler de diverses problématiques, telles que : Les fausses couches, L’infertilité, La grossesse à risque, La dépression post-partum, Les difficultés dans le lien parent-enfant. Ces consultations permettent d\’offrir un soutien adapté et bienveillant, favorisant un mieux-être pour la famille et aidant à construire un environnement émotionnel sain pour l’enfant dès le début de sa vie.',
             'image' => '/images/illu_offer_cp.webp',
             'identifier' => 'OFFER_CP',
         ]);
         DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Accueil sur indication médicale']);
         DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Pour la mère et son enfant jusqu’au trois ans de ce dernier. Hôpital de jour ouvert sur cinq demi-journées par semaine sur quatre heures comprenant un repas thérapeutique.']);
 
+        DB::table('sections')->insert([
+            'title' => 'Notre équipe',
+            'paragraph' => 'Notre équipe est composée de professionnels de la santé et du social, spécialisés dans l’accompagnement des parents et des enfants. Nous sommes là pour vous écouter, vous conseiller, et vous accompagner à chaque étape de votre vie de parent.',
+            'image' => null,
+            'identifier' => 'MEMBERS',
+        ]);
+
         // QUESTIONS
-        DB::table('questions')->insert(['question' => 'Quels sont les horaires d\'ouverture de l\'unité ?', 'answer' => 'Nous sommes ouverts du lundi au vendredi, de 9h à 17h.']);
-        DB::table('questions')->insert(['question' => 'Comment prendre rendez-vous ?', 'answer' => 'Vous pouvez nous contacter par téléphone au 03 81 88 33 62, ou par email à l\'adresse adresse@test.com.']);
-        DB::table('questions')->insert(['question' => 'Quels sont les services proposés par l\'unité ?', 'answer' => 'Nous proposons des consultations prénatales, un suivi postnatal, et des conseils adaptés pour les parents et leur bébé.', 'link' => 'https://upmb.test/offre-de-soins']);
-        DB::table('questions')->insert(['question' => 'Quels sont les partenaires de l\'unité ?', 'answer' => 'Nous travaillons avec des acteurs engagés pour offrir un soutien complet aux familles.']);
-        DB::table('questions')->insert(['question' => 'Comment puis-je soutenir l\'unité ?', 'answer' => 'Vous pouvez nous contacter pour en savoir plus sur les possibilités de soutien et de partenariat.', 'link' => 'mailto:pouet@test.fr']);
+        DB::table('questions')->insert(['question' => 'Quels sont les horaires d’ouverture de l’unité ?', 'answer' => 'Nous sommes ouverts du lundi au vendredi, de 9h à 17h.']);
+        DB::table('questions')->insert(['question' => 'Comment prendre rendez-vous ?', 'answer' => 'Vous pouvez nous contacter par téléphone au 03 81 88 33 62, ou par email à l’adresse adresse@test.com.']);
+        DB::table('questions')->insert(['question' => 'Quels sont les services proposés par l’unité ?', 'answer' => 'Nous proposons des consultations prénatales, un suivi postnatal, et des conseils adaptés pour les parents et leur bébé.', 'link' => 'https://upmb.test/offre-de-soins']);
+        DB::table('questions')->insert(['question' => 'Quels sont les partenaires de l’unité ?', 'answer' => 'Nous travaillons avec des acteurs engagés pour offrir un soutien complet aux familles.']);
+        DB::table('questions')->insert(['question' => 'Comment puis-je soutenir l’unité ?', 'answer' => 'Vous pouvez nous contacter pour en savoir plus sur les possibilités de soutien et de partenariat.', 'link' => 'mailto:pouet@test.fr']);
         DB::table('questions')->insert(['question' => 'Est ce que je peux venir avec mes autres enfants ?', 'answer' => 'Oui, vous pouvez venir avec vos autres enfants.']);
         DB::table('questions')->insert(['question' => 'Est ce que je peux venir avec mon ou ma conjointe ?', 'answer' => 'Oui, vous pouvez venir avec votre conjoint(e).']);
-        DB::table('questions')->insert(['question' => 'Dois-je venir avec mon bébé ?', 'answer' => 'Oui, c\'est préférable de venir avec votre bébé.']);
+        DB::table('questions')->insert(['question' => 'Dois-je venir avec mon bébé ?', 'answer' => 'Oui, c’est préférable de venir avec votre bébé.']);
         DB::table('questions')->insert(['question' => 'Quelle pièce fournir lors du premier RDV ?', 'answer' => 'Lors de votre premier rendez-vous, merci de vous munir de votre carte vitale et de votre carte de mutuelle.']);
         DB::table('questions')->insert(['question' => 'Que devrais-je payer ?', 'answer' => 'Les consultations sont prises en charge par la sécurité sociale.', 'link' => 'https://www.ameli.fr/']);
 
@@ -172,5 +198,14 @@ class DatabaseSeeder extends Seeder
         DB::table('links')->insert(['label' => 'ARS', 'url' => 'https://www.ars.sante.fr/']);
         DB::table('links')->insert(['label' => 'CHRU', 'url' => 'https://www.chu-besancon.fr/']);
         DB::table('links')->insert(['label' => 'CH Novillars', 'url' => 'https://www.ch-novillars.fr/']);
+
+        // MEMBERS
+        DB::table('members')->insert(['name' => 'Delphine', 'lastname' => 'Geoffrey', 'function' => 'Psychologue', 'image' => '/images/placeholder_f.webp', 'description' => 'Delphine est psychologue à l’unité d’accueil Père-Mère-Bébé. Elle accompagne les parents et les enfants dans leur relation.']);
+        DB::table('members')->insert(['name' => 'Anne', 'lastname' => 'Arthur', 'function' => 'Infirmière', 'image' => '/images/placeholder_f.webp', 'description' => null]);
+        DB::table('members')->insert(['name' => 'Adeline', 'lastname' => 'Lili', 'function' => 'Sage-femme', 'image' => '/images/placeholder_f.webp', 'description' => 'Adeline est sage-femme à l’unité d’accueil Père-Mère-Bébé. Elle assure le suivi des femmes enceintes et des jeunes mamans.']);
+        DB::table('members')->insert(['name' => 'Grégory', 'lastname' => 'Emmanuel', 'function' => 'Pédiatre', 'image' => '/images/placeholder_h.webp', 'description' => 'Grégory est pédiatre à l’unité d’accueil Père-Mère-Bébé. Il est spécialisé dans le suivi des nourrissons']);
+        DB::table('members')->insert(['name' => 'Marie', 'lastname' => 'Jean', 'function' => 'Puéricultrice', 'image' => '/images/placeholder_f.webp', 'description' => 'Marie est puéricultrice à l’unité d’accueil Père-Mère-Bébé. Elle assure le suivi des enfants et des parents.']);
+        DB::table('members')->insert(['name' => 'Sophie', 'lastname' => 'Pierre', 'function' => 'Psychomotricienne', 'image' => '/images/placeholder_f.webp', 'description' => 'Sophie est psychomotricienne à l’unité d’accueil Père-Mère-Bébé. Elle accompagne les enfants dans leur développement moteur.']);
+        DB::table('members')->insert(['name' => 'Julie', 'lastname' => 'Paul', 'function' => 'Orthophoniste', 'image' => '/images/placeholder_f.webp', 'description' => 'Julie est orthophoniste à l’unité d’accueil Père-Mère-Bébé. Elle accompagne les enfants dans leur développement du langage.']);
     }
 }

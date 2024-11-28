@@ -16,10 +16,10 @@ use App\Http\Controllers\LinkController;
  */
 Route::get('/',                    [GuestController::class, 'welcome']) ->name('welcome');
 Route::get('/offre-de-soins',      [GuestController::class, 'offer'])   ->name('offer');
+Route::get('/nos-missions',        [GuestController::class, 'missions'])->name('missions');
 Route::get('/foire-aux-questions', [GuestController::class, 'faq'])     ->name('faq');
 Route::get('/nous-contacter',      [GuestController::class, 'contact']) ->name('contact');
-// Route::get('/pour-qui',                                 function () { return Inertia::render('Guest/Who'); })      ->name('who');
-// Route::get('/notre-equipe',                             function () { return Inertia::render('Guest/Team'); })     ->name('team');
+Route::get('/notre-equipe',        [GuestController::class, 'team'])    ->name('team');
 
 /**
  * API routes

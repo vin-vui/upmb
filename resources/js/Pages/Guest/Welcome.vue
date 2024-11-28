@@ -1,26 +1,36 @@
 <template>
 <GuestLayout title="Accueil">
 
-    <Hero :title=heroSection.title :content=heroSection.paragraph :image=heroSection.image />
+    <section class="-mt-32 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent/30 to-primary/40 background-animate overflow-hidden">
+        <div class="container mx-auto px-4 pt-28 lg:pt-48 pb-36">
+            <div class="flex flex-col justify-center items-center">
+                <img class="xl:h-48 h-24" src="/images/logo.png" alt="Logo de l'unité père mère bébé">
+                <span class="font-annie font-bold xl:text-5xl text-3xl">Unité Père Mère Bébé</span>
+                <h2 class="mt-8 md:mt-15 h1 text-center" v-html=heroSection.title></h2>
+                <p class="text-center max-w-5xl mb-12 md:mb-20 text-gray-600 -mt-8" v-html=heroSection.paragraph></p>
+                <ContactButton />
+            </div>
+        </div>
+    </section>
 
     <ShapeTopWhite />
 
-    <!-- Nos Missions -->
-    <section class="mt-12 mb-32 pb-24 px-4 container mx-auto relative isolate">
-        <div class="flex flex-wrap justify-between items-center">
+    <!-- Pour qui ? -->
+    <section class="bg-white pt-12 sm:pt-24 mb-32 pb-24 px-4 container mx-auto relative isolate">
+        <div class="flex flex-wrap justify-between items-center ">
             <div class="w-full lg:w-1/2 rounded-3xl">
                 <div class="relative font-semibold font-heading">
-                    <h2 class="h2 text-accent">{{ missionsSection.title }}</h2>
-                    <p v-html=missionsSection.paragraph></p>
+                    <h2 class="h2 text-accent">{{ whoSection.title }}</h2>
+                    <p v-html=whoSection.paragraph></p>
                 </div>
                 <div class="rounded-3xl border border-accent/50 mt-8">
                     <img class="rounded-3xl shadow-xl shadow-accent/60 -rotate-2 object-cover aspect-square"
-                        :src=missionsSection.image
+                        :src=whoSection.image
                         alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
                 </div>
             </div>
-            <div class="w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
-                <div v-for="mission in missionsSection.items" class="bordered-card">
+            <div class="lg:pl-8 w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
+                <div v-for="mission in whoSection.items" class="bordered-card">
                     <div class="bg-white rounded-3xl md:py-8 py-4 md:px-4 px-2 flex items-center h-full  gap-4">
                         <div class="w-6">
                             <svg class="size-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
@@ -30,87 +40,15 @@
                 </div>
             </div>
         </div>
-        <div class="absolute inset-x-0 top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+        <div class="absolute inset-x-0 top-52 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
             <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-primary to-secondary opacity-25" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
         </div>
     </section>
 
     <ShapeTopPrimaryLight />
 
-    <!-- Notre Historique -->
-    <section class="bg-primary/30 pb-24 px-4 sm:px-0">
-        <div class="pt-18 sm:pt-24 pb-24 sm:pb-32 container mx-auto">
-            <div class="mx-auto max-w-2xl lg:text-center mb-12">
-                <h2 class="h2">{{ historySection.title }}</h2>
-                <p v-html="historySection.paragraph"></p>
-            </div>
-            <div class="flex flex-wrap items-center justify-between">
-                <div class="bordered-card lg:w-2/3">
-                    <div class="bg-white flex flex-col lg:flex-row gap-4 p-4 md:p-10 rounded-3xl">
-                        <div class="w-full xl:w-1/3">
-                            <div class="flex flex-col mb-5 gap-2">
-                                <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full">
-                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
-                                            <circle cx="12" cy="8" r="6" />
-                                            <path d="M16.874 12A6.5 6.5 0 0 1 18 15.684c0 .818-.148 1.599-.416 2.316M7.126 12A6.5 6.5 0 0 0 6 15.684C6 19.172 8.686 22 12 22c2.537 0 4.706-1.658 5.584-4m0 0c-2.733-1.2-5.528-3.167-6.584-4m1-12c-.994 0-1.8.784-1.8 1.75S11.006 5.5 12 5.5c.461 0 .882-.168 1.2-.446M10 8h.008M14 8h.008" />
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[0].content }}</div>
-                            </div>
-                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                {{ historySection.items[1].content }}
-                            </div>
-                        </div>
-                        <div class="w-full xl:w-1/3">
-                            <div class="flex flex-col mb-5 gap-2">
-                                <div class="flex items-center justify-center w-16 h-16 bg-secondary rounded-full">
-                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
-                                        <path fill="currentColor" d="M445.057 345.134L464 274.1V232c-8.136-93.993-87.933-168-184-168h-32v168H132.158l-17.844-78.768A32.155 32.155 0 0 0 83.038 128H16v32h67.038l40.475 178.67A80 80 0 1 0 224 416q0-4.05-.4-8h104.8q-.395 3.948-.4 8a80 80 0 1 0 117.057-70.866M280 96c78.411 0 143.145 59.678 151.164 136H280ZM144 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48m194.763-88H213.237a80.166 80.166 0 0 0-57.316-39.108L139.408 264H432v5.9l-17.7 66.368a80.592 80.592 0 0 0-6.3-.271A80.026 80.026 0 0 0 338.763 376M408 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48" />
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[2].content }}</div>
-                            </div>
-                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                {{ historySection.items[3].content }}
-                            </div>
-                        </div>
-                        <div class="w-full xl:w-1/3">
-                            <div class="flex flex-col mb-5 gap-2">
-                                <div class="flex items-center justify-center w-16 h-16 bg-accent rounded-full">
-                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
-                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5v6a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-6m0 0v-2a1 1 0 0 0-1-1a1 1 0 0 1-1-1V2a1.5 1.5 0 0 0-3 0v.5a1 1 0 0 1-1 1a1 1 0 0 0-1 1v2m-1 0h9m-4 3h3" />
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">
-                                    {{ historySection.items[4].content }}
-                                </div>
-                            </div>
-                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
-                                {{ historySection.items[5].content }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/3 md:pl-10 pt-10 lg:pt-0">
-                    <div class="h-full">
-                        <h3 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs cursor-default">
-                            Il est <span class="bg-accent font-averia rounded-lg px-4 inline-block text-neutral-100">ouvert</span>
-                            aux familles de la
-                            ville de Besançon mais aussi du Doubs et de la Région
-                        </h3>
-                        <ContactButton />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <ShapeTopWhite />
-
     <!-- Notre Offre de Soin -->
-    <section class="relative isolate pt-24 mb-24 pb-48 overflow-hidden ">
+    <section class="bg-primary/30 pt-12 sm:pt-24 pb-48 overflow-hidden">
         <div class="relative z-10 container mx-auto px-4">
             <div class="md:max-w-3xl md:mx-auto">
                 <h2 class="h2">{{ offerSection.title }}</h2>
@@ -183,10 +121,81 @@
         </div>
     </section>
 
+    <ShapeTopWhite />
+
+    <!-- Notre Historique -->
+    <section class="pt-12 sm:pt-24 pb-48 px-4 sm:px-0 relative isolate">
+        <div class="pt-18 sm:pt-24 pb-24 sm:pb-32 container mx-auto">
+            <div class="mx-auto max-w-2xl lg:text-center mb-12">
+                <h2 class="h2">{{ historySection.title }}</h2>
+                <p v-html="historySection.paragraph"></p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between">
+                <div class="bordered-card lg:w-2/3">
+                    <div class="bg-white flex flex-col lg:flex-row gap-4 p-4 md:p-10 rounded-3xl">
+                        <div class="w-full xl:w-1/3">
+                            <div class="flex flex-col mb-5 gap-2">
+                                <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full">
+                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
+                                            <circle cx="12" cy="8" r="6" />
+                                            <path d="M16.874 12A6.5 6.5 0 0 1 18 15.684c0 .818-.148 1.599-.416 2.316M7.126 12A6.5 6.5 0 0 0 6 15.684C6 19.172 8.686 22 12 22c2.537 0 4.706-1.658 5.584-4m0 0c-2.733-1.2-5.528-3.167-6.584-4m1-12c-.994 0-1.8.784-1.8 1.75S11.006 5.5 12 5.5c.461 0 .882-.168 1.2-.446M10 8h.008M14 8h.008" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[0].content }}</div>
+                            </div>
+                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
+                                {{ historySection.items[1].content }}
+                            </div>
+                        </div>
+                        <div class="w-full xl:w-1/3">
+                            <div class="flex flex-col mb-5 gap-2">
+                                <div class="flex items-center justify-center w-16 h-16 bg-secondary rounded-full">
+                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
+                                        <path fill="currentColor" d="M445.057 345.134L464 274.1V232c-8.136-93.993-87.933-168-184-168h-32v168H132.158l-17.844-78.768A32.155 32.155 0 0 0 83.038 128H16v32h67.038l40.475 178.67A80 80 0 1 0 224 416q0-4.05-.4-8h104.8q-.395 3.948-.4 8a80 80 0 1 0 117.057-70.866M280 96c78.411 0 143.145 59.678 151.164 136H280ZM144 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48m194.763-88H213.237a80.166 80.166 0 0 0-57.316-39.108L139.408 264H432v5.9l-17.7 66.368a80.592 80.592 0 0 0-6.3-.271A80.026 80.026 0 0 0 338.763 376M408 464a48 48 0 1 1 48-48a48.055 48.055 0 0 1-48 48" />
+                                    </svg>
+                                </div>
+                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">{{ historySection.items[2].content }}</div>
+                            </div>
+                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
+                                {{ historySection.items[3].content }}
+                            </div>
+                        </div>
+                        <div class="w-full xl:w-1/3">
+                            <div class="flex flex-col mb-5 gap-2">
+                                <div class="flex items-center justify-center w-16 h-16 bg-accent rounded-full">
+                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5v6a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-6m0 0v-2a1 1 0 0 0-1-1a1 1 0 0 1-1-1V2a1.5 1.5 0 0 0-3 0v.5a1 1 0 0 1-1 1a1 1 0 0 0-1 1v2m-1 0h9m-4 3h3" />
+                                    </svg>
+                                </div>
+                                <div class="text-2xl font-medium font-averia tracking-tight font-heading">
+                                    {{ historySection.items[4].content }}
+                                </div>
+                            </div>
+                            <div class="text-neutral-600 font-medium tracking-tight text-balance">
+                                {{ historySection.items[5].content }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 md:pl-10 pt-10 lg:pt-0">
+                    <div class="h-full">
+                        <h3 class="font-heading text-5xl tracking-tight font-semibold mb-7 max-w-xs cursor-default" v-html=historySection.items[6].content></h3>
+                        <ContactButton />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 top-52 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+            <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-primary to-accent opacity-25" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
+        </div>
+    </section>
+
     <ShapeTopSecondary />
 
     <!-- Témoignage Vidéo -->
-    <section class="overflow-hidden bg-secondary pt-24 pb-48">
+    <section class="overflow-hidden bg-secondary pt-12 sm:pt-24 pb-48">
         <div class="mx-auto container md:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
                 <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
@@ -241,7 +250,6 @@ import ShapeTopPrimaryLight from '@/Components/ShapeTopPrimaryLight.vue';
 import ShapeTopSecondary from '@/Components/ShapeTopSecondary.vue';
 import ShapeTopWhite from '@/Components/ShapeTopWhite.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-import Hero from '@/Pages/Guest/_Hero.vue';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -253,7 +261,7 @@ const filterSection = (identifier) => {
     return props.sections.find(section => section.identifier === identifier);
 };
 const heroSection       = computed(() => filterSection("HERO"));
-const missionsSection   = computed(() => filterSection("MISSIONS"));
+const whoSection        = computed(() => filterSection("WHO"));
 const historySection    = computed(() => filterSection("HISTORY"));
 const offerSection      = computed(() => filterSection("OFFER"));
 const testimonySection  = computed(() => filterSection("TESTIMONY"));

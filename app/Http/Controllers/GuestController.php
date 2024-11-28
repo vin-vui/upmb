@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 
 use Inertia\Inertia;
+use App\Models\Member;
 use App\Models\Notice;
 use App\Models\Partner;
 use App\Models\Section;
@@ -19,7 +20,7 @@ class GuestController extends Controller
     public function welcome(): \Inertia\Response
     {
         $partners = Partner::all();
-        $sections = Section::whereIn('identifier', values: ['HERO', 'MISSIONS', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->get();
+        $sections = Section::whereIn('identifier', values: ['HERO', 'WHO', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->get();
 
         return Inertia::render('Guest/Welcome', compact('partners', 'sections'));
     }
@@ -43,7 +44,7 @@ class GuestController extends Controller
         $informations = Information::all();
         $cta = $this->cta();
 
-        return Inertia::render('Guest/Contact', compact('informations', 'cta'));
+        return Inertia::render('Guest/Contact', props: compact('informations', 'cta'));
     }
 
     public function cta()
@@ -51,6 +52,23 @@ class GuestController extends Controller
         $cta = Section::where('identifier', 'CTA')->first();
 
         return $cta;
+    }
+
+    public function missions()
+    {
+        $mission = Section::where('identifier', 'MISSIONS')->with('items')->first();
+
+        return Inertia::render('Guest/Missions', props: compact('mission'));
+
+    }
+
+    public function team()
+    {
+        $members = Member::all();
+        $section = Section::where('identifier', 'MEMBERS')->first();
+
+        return Inertia::render('Guest/Team', props: compact('members', 'section'));
+
     }
 
     public function notices()

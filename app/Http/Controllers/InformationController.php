@@ -7,9 +7,9 @@ use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardController extends Controller
+class InformationController extends Controller
 {
-    public function dashboard()
+    public function informations()
     {
         $informations = Information::all();
 

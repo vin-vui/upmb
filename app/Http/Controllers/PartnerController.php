@@ -16,7 +16,7 @@ class PartnerController extends Controller
     {
         $partners = Partner::all();
 
-        return Inertia::render('Admin/Partners/Index', compact('partners'));
+        return Inertia::render('Admin/Partners', compact('partners'));
     }
 
     /**

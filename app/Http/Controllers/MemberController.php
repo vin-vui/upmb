@@ -2,25 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MemberController extends Controller
 {
-    /**
+       /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-    }
+        $members = Member::all();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return Inertia::render('Admin/Members', compact('members'));
     }
 
     /**
@@ -28,31 +24,27 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $rules = [
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'function' => 'required|string|max:255',
+            'description' => 'nullable',
+        ];
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Member $member)
-    {
-        //
-    }
+        if ($request->hasFile('image')) {
+            $rules['image'] = ['image', 'mimes:jpeg,jpg,png,gif,svg,webp', 'max:2048'];
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Member $member)
-    {
-        //
-    }
+        $validated = $request->validate($rules);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Member $member)
-    {
-        //
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('members', $request->file('image'));
+            $validated['image'] = '/storage/'.$path;
+        }
+
+        Member::updateOrCreate(['id' => $request->id], $validated);
+
+        return redirect()->back();
     }
 
     /**
@@ -60,6 +52,7 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+        return redirect()->back();
     }
 }

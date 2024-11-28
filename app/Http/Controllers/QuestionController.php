@@ -17,7 +17,7 @@ class QuestionController extends Controller
     {
         $questions = Question::orderBy('order')->get();
 
-        return Inertia::render('Admin/Questions/Index', compact('questions'));
+        return Inertia::render('Admin/Questions', compact('questions'));
     }
 
     /**

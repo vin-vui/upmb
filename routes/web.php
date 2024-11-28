@@ -1,15 +1,14 @@
 <?php
 
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\GuestController;
-
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LinkController;
+use App\Http\Controllers\InformationController;
 
 /**
  * Guest routes
@@ -37,8 +36,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     /** Dashboard */
-    Route::get(         'dashboard',                    [DashboardController::class,    'dashboard'])           ->name('dashboard');
-    Route::post(        'informations/{information}',   [DashboardController::class,    'updateInformation'])   ->name('informations.update');
+    Route::get(         'dashboard',                    [InformationController::class,    'dashboard'])         ->name('dashboard');
+    /** Informations */
+    Route::get(         'informations',                 [InformationController::class,    'informations'])      ->name('informations');
+    Route::post(        'informations/{information}',   [InformationController::class,    'updateInformation']) ->name('informations.update');
     /** Questions */
     Route::resource(   'questions',                 QuestionController::class);
     Route::post(        'questions/reorder',            [QuestionController::class,     'reorder'])             ->name('questions.reorder');
@@ -46,11 +47,15 @@ Route::middleware([
     Route::resource(   'notices',                   NoticeController::class);
     /** Partners */
     Route::resource(   'partners',                  PartnerController::class);
+    /** Members */
+    Route::resource(   'members',                   MemberController::class);
     /** Links */
     Route::resource(   'links',                     LinkController::class);
     Route::post(        'links/reorder',                [LinkController::class,         'reorder'])             ->name('links.reorder');
     /** Sections */
     Route::get(         'sections/welcome',             [SectionController::class,      'welcome'])             ->name('sections.welcome');
+    Route::get(         'sections/offer',               [SectionController::class,      'offer'])               ->name('sections.offer');
+    Route::get(         'sections/missions',            [SectionController::class,      'missions'])            ->name('sections.missions');
     Route::post(        'sections/{section}',           [SectionController::class,      'update'])              ->name('sections.update');
     Route::post(        'items/{item}',                 [SectionController::class,      'updateItem'])          ->name('items.update');
     Route::post(        'items',                        [SectionController::class,      'newItem'])             ->name('items.store');

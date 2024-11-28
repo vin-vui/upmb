@@ -10,14 +10,25 @@ use Illuminate\Support\Facades\Storage;
 
 class SectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function welcome()
     {
-        $sections = Section::whereIn('identifier', values: ['HERO', 'MISSIONS', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->orderBy('id')->get();
+        $sections = Section::whereIn('identifier', values: ['HERO', 'WHO', 'HISTORY', 'OFFER', 'TESTIMONY', 'PARTNERS'])->with('items')->orderBy('id')->get();
 
-        return Inertia::render('Admin/Guest/Welcome', compact('sections'));
+        return Inertia::render('Admin/Section', compact('sections'));
+    }
+
+    public function missions()
+    {
+        $sections = Section::whereIn('identifier', values: ['MISSIONS'])->with('items')->orderBy('id')->get();
+
+        return Inertia::render('Admin/Section', compact('sections'));
+    }
+
+    public function offer()
+    {
+        $sections = Section::whereIn('identifier', values: ['OFFERS', 'OFFER_PB', 'OFFER_GP', 'OFFER_GPP', 'OFFER_CP', 'OFFER_HJMB'])->with('items')->orderBy('id')->get();
+
+        return Inertia::render('Admin/Section', compact('sections'));
     }
 
     /**

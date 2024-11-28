@@ -1,5 +1,5 @@
 <template>
-<AppLayout title="Tableau de bord">
+<AppLayout title="Informations">
     <div class="rounded-3xl bg-white p-6 shadow-lg relative mt-8">
         <h3 class="modal-heading">Informations</h3>
         <div class="grid grid-cols-2 gap-y-4 gap-x-8">

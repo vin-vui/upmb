@@ -1,10 +1,11 @@
 <template>
     <AppLayout title="Page - Accueil">
-        <div class="mt-6 grid grid-cols-1 gap-4">
+        <div class="mt-12 grid grid-cols-1 gap-4">
             <div v-for="(section, index) in sections" :key="index" class="">
-                <button type="button" class="collapse-toggle modal-heading w-full collapse-open:bg-white collapse-open:text-gray-900 hover:bg-white hover:text-gray-900 transition-all duration-200" :id="'basic-collapse-' + index" aria-expanded="false" :aria-controls="'basic-collapse-heading' + index" :data-collapse="'#basic-collapse-heading' + index">
-                    {{ section.title }}
-                    <span class="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4"></span>
+                <button type="button" class="collapse-toggle modal-heading w-full collapse-open:bg-white collapse-open:text-gray-900 hover:bg-white hover:text-gray-900 transition-all duration-200"
+                    :id="'basic-collapse-' + index" aria-expanded="false" :aria-controls="'basic-collapse-heading' + index" :data-collapse="'#basic-collapse-heading' + index">
+                    <span class="" v-html=section.title></span>
+                    <span class="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4 ml-4"></span>
                 </button>
                 <div :id="'basic-collapse-heading' + index" class="-mt-12 mb-8 collapse hidden w-full overflow-hidden transition-[height] duration-300 rounded-3xl p-8 bg-white" aria-labelledby="basic-collapse">
                     <div class="flex gap-8">

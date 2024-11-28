@@ -13,9 +13,9 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $links = Link::orderBy('order')->get(); 
+        $links = Link::orderBy('order')->get();
 
-        return Inertia::render('Admin/Links/Index', compact('links'));
+        return Inertia::render('Admin/Links', compact('links'));
     }
 
     /**

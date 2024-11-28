@@ -14,7 +14,7 @@ class NoticeController extends Controller
     public function index()
     {
         $notices = Notice::all();
-        return Inertia::render('Admin/Notices/Index', compact('notices'));
+        return Inertia::render('Admin/Notices', compact('notices'));
     }
 
     /**

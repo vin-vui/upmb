@@ -13,7 +13,7 @@
                             alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
                     </div>
                 </div>
-                <div class="pl-8 w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
+                <div class="lg:pl-8 w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
                     <div v-for="mission in mission.items" class="bordered-card">
                         <div class="bg-white rounded-3xl md:py-8 py-4 md:px-4 px-2 flex items-center h-full  gap-4">
                             <div class="w-6">

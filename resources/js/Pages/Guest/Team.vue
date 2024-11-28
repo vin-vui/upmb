@@ -4,8 +4,8 @@
             <div class="container mx-auto px-4 pt-36 md:pt-64 pb-36">
                 <h1 class="h2 text-center">{{ section.title }}</h1>
                 <p class="text-center mb-20" v-html=section.paragraph></p>
-                <div class="flex flex-wrap max-w-6xl mx-auto">
-                    <div v-for="member in members" class="w-full md:w-1/2 xl:w-1/3 p-7">
+                <div class="flex flex-wrap  mx-auto">
+                    <div v-for="member in members" class="w-full md:w-1/2 xl:w-1/4 p-7">
                         <div class="p-1 bordered-card transform hover:-translate-y-3 transition ease-out duration-1000">
                             <div class="p-16 bg-white rounded-3xl ">
                                 <img class="mb-11 mx-auto rounded-3xl" :src=member.image alt="">

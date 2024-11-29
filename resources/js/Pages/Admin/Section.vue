@@ -1,13 +1,13 @@
 <template>
-    <AppLayout title="Page - Accueil">
-        <div class="mt-12 grid grid-cols-1 gap-4">
+    <AppLayout :title="'Textes de la page ' + title">
+        <div class="mt-12 grid grid-cols-1 divide-y">
             <div v-for="(section, index) in sections" :key="index" class="">
-                <button type="button" class="collapse-toggle modal-heading w-full collapse-open:bg-white collapse-open:text-gray-900 hover:bg-white hover:text-gray-900 transition-all duration-200"
+                <button type="button" class="w-full collapse-toggle flex items-center justify-between text-xl font-semibold py-4 px-8 collapse-open:rounded-t-3xl collapse-open:shadow-lg collapse-open:shadow-accent/40 collapse-open:bg-accent collapse-open:text-white hover:bg-white hover:text-gray-900 transition-all duration-200"
                     :id="'basic-collapse-' + index" aria-expanded="false" :aria-controls="'basic-collapse-heading' + index" :data-collapse="'#basic-collapse-heading' + index">
-                    <span class="" v-html=section.title></span>
+                    <span class="truncate" v-html=section.title></span>
                     <span class="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4 ml-4"></span>
                 </button>
-                <div :id="'basic-collapse-heading' + index" class="-mt-12 mb-8 collapse hidden w-full overflow-hidden transition-[height] duration-300 rounded-3xl p-8 bg-white" aria-labelledby="basic-collapse">
+                <div :id="'basic-collapse-heading' + index" class="mb-8 shadow-lg shadow-accent/40 collapse hidden w-full overflow-hidden transition-[height] duration-300 rounded-b-3xl p-8 bg-white" aria-labelledby="basic-collapse">
                     <div class="flex gap-8">
                         <div class="w-2/3">
                             <InputLabel value="Titre" :for="'title-' + index" />
@@ -53,9 +53,9 @@
                         </div>
                     </div>
                     <div v-if="section.items && section.items.length > 0" class=" mt-3">
-                        <div v-for="item in section.items" :key="index" class="flex items-center justify-between gap-6">
+                        <div v-for="(item, index) in section.items" :key="index" class="flex items-center justify-between gap-6">
                             <div class="w-full">
-                                <InputLabel value="Item" :for="'item-' + index" />
+                                <InputLabel :value="displayLabel(section.fixed_item_number, item.label, index)" :for="'item-' + index" />
                                 <input
                                     :id="'item-' + index"
                                     v-model="item.content"
@@ -95,6 +95,10 @@ export default {
             type: Array,
             required: true,
         },
+        title: {
+            type: String,
+            required: true,
+        },
     },
     data() {
         return {
@@ -121,6 +125,9 @@ export default {
         },
     },
     methods: {
+        displayLabel(fixedItemNumber, label, index) {
+            return fixedItemNumber ? label : 'Item ' + (index + 1);
+        },
         formatContent(paragraph) {
             return paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         },
@@ -187,7 +194,6 @@ export default {
             this.isSaving = false;
         },
         async saveItem(item) {
-            console.log('item', item);
             const formData = new FormData();
             formData.append('content', item.content);
 

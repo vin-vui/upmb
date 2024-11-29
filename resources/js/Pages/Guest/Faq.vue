@@ -6,8 +6,8 @@
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-36 md:pt-64 pb-36">
                     <div class="">
-                        <h2 class="h2">Foire aux Questions</h2>
-                        <p class="mb-8">Vous ne trouvez pas la réponse que vous cherchez ? Contactez notre équipe.</p>
+                        <h2 class="h2">{{ questionsSection.title }}</h2>
+                        <p class="mb-8" v-html=questionsSection.paragraph></p>
                         <ContactButton />
                     </div>
                     <div class="col-span-2">
@@ -60,10 +60,8 @@
                 <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-3 lg:items-start">
                     <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
                         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-                            <h2 class="h2 text-white">Toutes nos vidéos</h2>
-                            <p class="text-neutral-100">
-                                Découvrez notre collection de vidéos inspirantes, éducatives et informatives. Que vous cherchiez à en savoir plus sur nos services, à explorer des témoignages ou à approfondir des sujets spécifiques, cette section rassemble toutes nos vidéos en un seul endroit pour un accès facile.
-                            </p>
+                            <h2 class="h2 text-white">{{ videosSection.title }}</h2>
+                            <p class="text-neutral-100" v-html=videosSection.paragraph></p>
                         </div>
                     </div>
                     <div class="sm:px-6 lg:px-0 lg:col-span-2">
@@ -125,23 +123,35 @@ export default {
     components: {
         GuestLayout, ContactButton, ShapeTopSecondary
     },
-
     props: {
         questions: {
             type: Array,
             required: true,
         },
+        sections: {
+            type: Array,
+            required: true,
+        }
     },
-
     mounted() {
         window.HSStaticMethods.autoInit(["accordion"]);
     },
-
+    computed: {
+        questionsSection() {
+            return this.filterSection("QUESTIONS");
+        },
+        videosSection() {
+            return this.filterSection("VIDEOS");
+        }
+    },
     methods: {
         linkTarget(url) {
             const isExternal = url.startsWith('https://upmb.test') ? false : true;
             return isExternal ? '_blank' : '_self';
+        },
+        filterSection(identifier) {
+            return this.sections.find(section => section.identifier === identifier);
         }
-    }
+    },
 }
 </script>

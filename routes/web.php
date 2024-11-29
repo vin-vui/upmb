@@ -56,6 +56,9 @@ Route::middleware([
     Route::get(         'sections/welcome',             [SectionController::class,      'welcome'])             ->name('sections.welcome');
     Route::get(         'sections/offer',               [SectionController::class,      'offer'])               ->name('sections.offer');
     Route::get(         'sections/missions',            [SectionController::class,      'missions'])            ->name('sections.missions');
+    Route::get(         'sections/questions',           [SectionController::class,      'questions'])           ->name('sections.questions');
+    Route::get(         'sections/team',                [SectionController::class,      'team'])                ->name('sections.team');
+    Route::get(         'sections/contact',             [SectionController::class,      'contact'])             ->name('sections.contact');
     Route::post(        'sections/{section}',           [SectionController::class,      'update'])              ->name('sections.update');
     Route::post(        'items/{item}',                 [SectionController::class,      'updateItem'])          ->name('items.update');
     Route::post(        'items',                        [SectionController::class,      'newItem'])             ->name('items.store');

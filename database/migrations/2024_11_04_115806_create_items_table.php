@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
             $table->text('content');
             $table->string('section_identifier')->nullable();
             $table->foreign('section_identifier')->references('identifier')->on('sections');

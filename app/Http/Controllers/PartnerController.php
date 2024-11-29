@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */

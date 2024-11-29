@@ -27,28 +27,37 @@
                         <NavLink :href="route('notices.index')" :active="route().current('notices.*')">
                             Annonces
                         </NavLink>
+                        <div class="mt-6 text-xs/6 font-semibold text-secondary">Items du site</div>
                         <NavLink :href="route('partners.index')" :active="route().current('partners.*')">
                             Partenaires
                         </NavLink>
-                        <div class="mt-6 text-xs/6 font-semibold text-secondary">Pied de page</div>
+                        <NavLink :href="route('questions.index')" :active="route().current('questions.*')">
+                            questions / réponses
+                        </NavLink>
+                        <NavLink :href="route('members.index')" :active="route().current('members.index')">
+                            membres de l'équipe
+                        </NavLink>
                         <NavLink :href="route('links.index')" :active="route().current('links.*')">
                             Liens Utiles
                         </NavLink>
-                        <div class="mt-6 text-xs/6 font-semibold text-secondary">Pages du site</div>
+                        <div class="mt-6 text-xs/6 font-semibold text-secondary">Textes du site</div>
                         <NavLink :href="route('sections.welcome')" :active="route().current('sections.welcome')">
                             accueil
                         </NavLink>
                         <NavLink :href="route('sections.offer')" :active="route().current('sections.offer')">
-                            offre de soin
+                            notre offre de soin
                         </NavLink>
                         <NavLink :href="route('sections.missions')" :active="route().current('sections.missions')">
                             nos missions
                         </NavLink>
-                        <NavLink :href="route('members.index')" :active="route().current('members.index')">
+                        <NavLink :href="route('sections.team')" :active="route().current('sections.team')">
                             notre équipe
                         </NavLink>
-                        <NavLink :href="route('questions.index')" :active="route().current('questions.*')">
+                        <NavLink :href="route('sections.questions')" :active="route().current('sections.questions')">
                             FAQ
+                        </NavLink>
+                        <NavLink :href="route('sections.contact')" :active="route().current('sections.contact')">
+                            Nous Contacter
                         </NavLink>
                     </div>
                 </div>
@@ -68,7 +77,7 @@
         <div class="ml-64 w-full">
             <header class="bg-white shadow-xl shadow-gray-200 sticky top-0 z-30 ">
                 <div class="mx-auto px-6 lg:px-8 py-2 flex h-16 items-center justify-between">
-                    <h2 class="font-averia text-2xl font-bold capitalize leading-10 tracking-tight text-gray-900">{{ title }}</h2>
+                    <h2 class="font-averia text-2xl font-bold leading-10 tracking-tight text-gray-900">{{ title }}</h2>
                     <button v-if="button" @click="openModal" class="btn-accent">
                         {{ button }}
                     </button>
@@ -88,7 +97,6 @@
 import { Head, Link, router } from '@inertiajs/vue3';
 import Banner from '@/Components/Banner.vue';
 import NavLink from '@/Components/NavLink.vue';
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 
 defineProps({
     title: String,

@@ -20,7 +20,7 @@
     </dl>
     <!-- Modal -->
     <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-        <div class="bg-white p-6 rounded-xl shadow-lg w-1/3">
+        <div class="bg-white p-6 rounded-xl shadow-lg w-2/3">
             <h3 class="modal-heading">{{ isEditing ? 'Modifier la question' : 'Ajouter une question' }}</h3>
             <form @submit.prevent="submitForm" class="flex flex-col gap-4">
                 <div class="">

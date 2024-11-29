@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         DB::table('informations')->insert(['identifier' => 'BUS_1',     'title' => 'accès bus',  'label' => 'Ligne 10 - arrêt centre de tri']);
         DB::table('informations')->insert(['identifier' => 'BUS_2',     'title' => 'accès bus',  'label' => 'Ligne 7 - arrêt Kennedy']);
         DB::table('informations')->insert(['identifier' => 'DOC',       'title' => 'plaquette',  'label' => '']);
+        DB::table('informations')->insert(['identifier' => 'HOURS',     'title' => 'horaires',   'label' => 'Secrétariat ouvert du lundi au vendredi de 9h à 17h']);
 
         // SECTIONS
         DB::table('sections')->insert([
@@ -73,13 +74,13 @@ class DatabaseSeeder extends Seeder
             'image' => null,
             'identifier' => 'HISTORY',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'L’Unité Père-Mère-Bébé']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'fait l’objet d’une convention entre deux établissements : le Centre Hospitalier de Novillars, le Centre Hospitalier Universitaire. Il fait partie du Pôle de Psychiatrie de l’Enfant et l’Adolescent du Centre Hospitalier de Novillars.']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Cette structure est née']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'en 2007 à l’initiative de professionnelle du soin de la petite enfance ayant souhaité proposer un lieu d’accueil et d’accompagnement pouvant permettre en cas de besoin un lien entre la sortie de la maternité et l’accès aux soins de l’enfance.']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Il semblait par ailleurs']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des remaniements physiologiques, psychiques que pour l’enfant en plein développement.']);
-        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'content' => 'Il est <strong>ouvert</strong> aux familles de la ville de Besançon mais aussi du Doubs et de la Région']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Titre 1', 'content' => 'L’Unité Père-Mère-Bébé']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Paragraphe 1', 'content' => 'fait l’objet d’une convention entre deux établissements : le Centre Hospitalier de Novillars, le Centre Hospitalier Universitaire. Il fait partie du Pôle de Psychiatrie de l’Enfant et l’Adolescent du Centre Hospitalier de Novillars.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Titre 2', 'content' => 'Cette structure est née']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Paragraphe 2', 'content' => 'en 2007 à l’initiative de professionnelle du soin de la petite enfance ayant souhaité proposer un lieu d’accueil et d’accompagnement pouvant permettre en cas de besoin un lien entre la sortie de la maternité et l’accès aux soins de l’enfance.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Titre 3', 'content' => 'Il semblait par ailleurs']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Paragraphe 3', 'content' => 'primordial de soutenir cette étape de vie qui est celle de devenir parents ainsi que toute la période de périnatalité, moment de grande vulnérabilité tant pour les parents du fait des remaniements physiologiques, psychiques que pour l’enfant en plein développement.']);
+        DB::table('items')->insert(['section_identifier' => 'HISTORY', 'label' => 'Texte à côté', 'content' => 'Il est <strong>ouvert</strong> aux familles de la ville de Besançon mais aussi du Doubs et de la Région']);
 
         DB::table('sections')->insert([
             'title' => 'Notre Offre de Soin',
@@ -109,6 +110,20 @@ class DatabaseSeeder extends Seeder
             'identifier' => 'CTA',
         ]);
 
+        DB::table('sections')->insert([
+            'title' => 'Foire aux Questions',
+            'paragraph' => 'Vous ne trouvez pas la réponse que vous cherchez ? Contactez notre équipe.',
+            'image' => null,
+            'identifier' => 'QUESTIONS',
+        ]);
+
+        DB::table('sections')->insert([
+            'title' => 'Toutes nos vidéos',
+            'paragraph' => 'Découvrez notre collection de vidéos inspirantes, éducatives et informatives. Que vous cherchiez à en savoir plus sur nos services, à explorer des témoignages ou à approfondir des sujets spécifiques, cette section rassemble toutes nos vidéos en un seul endroit pour un accès facile',
+            'image' => null,
+            'identifier' => 'VIDEOS',
+        ]);
+
         /*
         * ONGLET OFFRE DE SOIN
         */
@@ -126,8 +141,8 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_offer_pb.webp',
             'identifier' => 'OFFER_PB',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'label' => 'Modalités d\'accueil', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_PB', 'label' => 'Horaires', 'content' => 'Du lundi au vendredi de 9h à 17h']);
         // GROUPES DE PAROLE FEMMES ENCEINTES
         DB::table('sections')->insert([
             'title' => 'Les groupes de parole pour les femmes enceintes',
@@ -135,8 +150,8 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_offer_gp_2.webp',
             'identifier' => 'OFFER_GP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'label' => 'Modalités d\'accueil', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GP', 'label' => 'Horaires', 'content' => 'Du lundi au vendredi de 9h à 17h']);
         // GROUPES DE PAROLE PERES
         DB::table('sections')->insert([
             'title' => 'Les groupes de parole pour les pères',
@@ -144,8 +159,8 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_offer_gp_3.webp',
             'identifier' => 'OFFER_GPP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'label' => 'Modalités d\'accueil', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_GPP', 'label' => 'Horaires', 'content' => 'Du lundi au vendredi de 9h à 17h']);
         // CONSULTATIONS PERINATALES
         DB::table('sections')->insert([
             'title' => 'Les consultations périnatales',
@@ -153,8 +168,8 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_offer_cp.webp',
             'identifier' => 'OFFER_CP',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'label' => 'Modalités d\'accueil', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_CP', 'label' => 'Horaires', 'content' => 'Du lundi au vendredi de 9h à 17h']);
         // HOPITAL DE JOUR MERE-BEBE
         DB::table('sections')->insert([
             'title' => 'L’hôpital de jour Mère-Bébé',
@@ -162,8 +177,8 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/illu_offer_hjmb.webp',
             'identifier' => 'OFFER_HJMB',
         ]);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
-        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'content' => 'Du lundi au vendredi de 9h à 17h']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'label' => 'Modalités d\'accueil', 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.']);
+        DB::table('items')->insert(['section_identifier' => 'OFFER_HJMB', 'label' => 'Horaires', 'content' => 'Du lundi au vendredi de 9h à 17h']);
 
         /*
         * ONGLET NOTRE EQUIPE

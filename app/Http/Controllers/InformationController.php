@@ -13,7 +13,7 @@ class InformationController extends Controller
     {
         $informations = Information::all();
 
-        return Inertia::render('Admin/Dashboard', compact('informations'));
+        return Inertia::render('Admin/Informations', compact('informations'));
     }
 
     public function updateInformation(Request $request, Information $information)
@@ -31,5 +31,10 @@ class InformationController extends Controller
             ]);
             $information->update($validated);
         }
+    }
+
+    public function dashboard()
+    {
+        return Inertia::render('Admin/Dashboard');
     }
 }

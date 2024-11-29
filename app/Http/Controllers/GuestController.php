@@ -35,8 +35,9 @@ class GuestController extends Controller
     public function faq(): \Inertia\Response
     {
         $questions = Question::orderBy('order')->get();
+        $sections = Section::whereIn('identifier', values: ['QUESTIONS', 'VIDEOS'])->get();
 
-        return Inertia::render('Guest/Faq', compact('questions'));
+        return Inertia::render('Guest/Faq', compact('questions', 'sections'));
     }
 
     public function contact(): \Inertia\Response

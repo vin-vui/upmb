@@ -16,6 +16,8 @@
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
+        <script defer data-domain="umpb-test.vinvui.com" src="https://plausible.io/js/script.file-downloads.hash.outbound-links.js"></script>
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     </head>
     <body class="font-sans antialiased">
         @inertia

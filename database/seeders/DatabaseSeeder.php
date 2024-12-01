@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // USER
         User::factory()->create(['name' => 'Admin', 'email' => 'admin@admin.com']);
+        User::factory()->create(['name' => 'Test', 'email' => 'test@test.com']);
 
         // NOTICE
         DB::table('notices')->insert(['title' => 'Notification test', 'description' => 'Ceci est une notification de test pour se rendre compte de l’affichage 🤩', 'display' => false]);

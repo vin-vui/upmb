@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
         DB::table('sections')->insert([
             'title' => 'Notre Offre de Soin',
             'paragraph' => 'Nous offrons un accompagnement bienveillant pour les parents et leur bébé, avec des <strong>consultations prénatales</strong>, un <strong>suivi postnatal</strong>, et des conseils adaptés. Nos équipes sont là pour vous soutenir à chaque étape.',
-            'image' => null,
+            'image' => '/images/illu_offer_gp_1.webp',
             'identifier' => 'OFFER',
         ]);
 

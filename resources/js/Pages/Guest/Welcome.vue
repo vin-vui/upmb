@@ -29,9 +29,9 @@
                         alt="Illustration d'une docteure qui prend soin d'une mère et son enfant">
                 </div>
             </div>
-            <div class="lg:pl-8 w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-1 gap-4 cursor-default mt-8">
+            <div class="lg:pl-8 w-full lg:max-w-xl lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 cursor-default mt-8">
                 <div v-for="mission in whoSection.items" class="bordered-card">
-                    <div class="bg-white rounded-3xl md:py-8 py-4 md:px-4 px-2 flex items-center h-full  gap-4">
+                    <div class="bg-white rounded-3xl py-4 md:px-4 px-2 flex items-center h-full  gap-4">
                         <div class="w-6">
                             <svg class="size-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
                         </div>
@@ -55,62 +55,88 @@
                 <p v-html="offerSection.paragraph"></p>
                 <div class="flex flex-wrap -m-5 mt-8">
                     <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
-                        <div class="h-full p-9 transform hover:-translate-y-3 bg-primary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
-                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour évoquer les préoccupations</p>
-                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les Groupes de Parole</h3>
-                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
-                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
-                                    </svg>
+                        <a :href="route('offer') + '#section-12'">
+                            <div class="h-full flex flex-col justify-between p-9 transform hover:-translate-y-3 bg-primary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                                <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Accueil Parents-Bébé</h3>
+                                <div>
+                                    <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                        <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
+                                            <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="link link-primary link-animated">je découvre</span>
+                                    </span>
                                 </div>
-                                <span class="link link-primary link-animated">je découvre</span>
-                            </span>
-                        </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="w-full md:w-1/2 p-5">
-                        <div class="flex flex-col justify-between p-9 h-full transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
-                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Pour la mère et son enfant</p>
-                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">L’hôpital de jour Mère-Bébé</h3>
-                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
-                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
-                                    </svg>
-                                </div>
-                                <span class="link link-primary link-animated">je découvre</span>
-                            </span>
+                    <div class="md:block hidden p-5 md:w-1/2">
+                        <div class="rounded-3xl h-full w-full border border-accent/50">
+                            <img class="rounded-3xl h-full shadow-xl shadow-accent/60 object-cover rotate-2 aspect-square" :src=offerSection.image alt="">
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
-                        <div class="h-full p-9 transform hover:-translate-y-3 bg-secondary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
-                            <p class="mb-4 font-heading text-base text-white text-opacity-70">Un espace d'écoute</p>
-                            <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les consultations périnatales</h3>
-                            <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
-                                    <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
-                                    </svg>
-                                </div>
-                                <span class="link link-primary link-animated">je découvre</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 p-5">
-                        <div class="bordered-card group cursor-pointer">
-                            <div class="bg-white p-9 rounded-3xl">
-                                <p class="mb-4 font-heading text-base text-opacity-70">Accueille les futurs parent</p>
-                                <h3 class="mb-20 font-heading font-bold text-3xl text-balance">Accueil Parents-Bébé</h3>
-                                <span class="font-heading font-averia text-gray-900 text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                    <div class="size-6 bg-gray-900 group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
-                                        <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                        <a :href="route('offer') + '#section-13'">
+                            <div class="flex flex-col justify-between p-9 h-full transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                                <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les groupes de parole pour les femmes enceintes</h3>
+                                <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                    <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
+                                        <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
                                         </svg>
                                     </div>
                                     <span class="link link-primary link-animated">je découvre</span>
                                 </span>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div class="w-full md:w-1/2  p-5">
+                        <a :href="route('offer') + '#section-14'">
+                            <div class="flex flex-col justify-between p-9 h-full transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                                <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les groupes de parole pour les pères</h3>
+                                <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                    <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
+                                        <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="link link-primary link-animated">je découvre</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w-full md:w-1/2 md:relative md:top-12 p-5">
+                        <a :href="route('offer') + '#section-15'">
+                            <div class="h-full p-9 transform hover:-translate-y-3 bg-secondary rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
+                                <h3 class="mb-20 font-heading font-bold text-white text-3xl text-balance">Les consultations périnatales</h3>
+                                <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                    <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
+                                        <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="link link-primary link-animated">je découvre</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w-full md:w-1/2 p-5">
+                        <a :href="route('offer') + '#section-16'">
+                            <div class="bordered-card group cursor-pointer">
+                                <div class="bg-white p-9 rounded-3xl">
+                                    <h3 class="mb-20 font-heading font-bold text-3xl text-balance">L’hôpital de jour Mère-Bébé</h3>
+                                    <span class="font-heading font-averia text-gray-900 text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
+                                        <div class="size-6 bg-gray-900 group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
+                                            <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="link link-primary link-animated">je découvre</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

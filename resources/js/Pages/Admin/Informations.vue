@@ -15,8 +15,9 @@
                     <span class="btn-primary cursor-pointer">Choisir un fichier PDF</span>
                     <input type="file" id="pdf-upload" accept=".pdf" @change="saveInformation(information, $event)" class="absolute left-0 top-0 h-full w-full opacity-0 cursor-pointer" />
                 </button>
-                <div v-if="information.label && information.label.includes('.pdf')" class="btn-accent-light">
-                    <a :href="information.label" target="_blank" class="">Voir la plaquette</a>
+                <div v-if="information.label && information.label.includes('.pdf')" class="flex items-center gap-2">
+                    <a :href="information.label" target="_blank" class="btn-accent-light">Voir la plaquette</a>
+                    <button @click="deletePlaquette(information)" class="btn-accent-light !text-red-500 hover:!border-red-500">Supprimer</button>
                 </div>
                 <div v-else class="btn-accent-light cursor-not-allowed">Aucune plaquette</div>
             </div>
@@ -57,13 +58,19 @@ export default {
     },
     computed: {
         filteredInformations() {
-            return this.informations.filter(info => info.title !== 'plaquette');
+            return this.informations.filter(info => info.title !== 'plaquette' && info.title !== 'email');
         },
         plaquetteInformations() {
             return this.informations.filter(info => info.title === 'plaquette');
         }
     },
     methods: {
+        deletePlaquette(information) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer la plaquette ?')) {
+                information.label = '';
+                this.saveInformation(information);
+            }
+        },
         saveInformation(information, event = null) {
             if (this.debounceTimeout) {
                 clearTimeout(this.debounceTimeout);

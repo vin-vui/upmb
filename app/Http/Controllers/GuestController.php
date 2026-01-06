@@ -14,9 +14,6 @@ use App\Models\Information;
 
 class GuestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function welcome(): \Inertia\Response
     {
         $partners = Partner::all();
@@ -60,7 +57,6 @@ class GuestController extends Controller
         $mission = Section::where('identifier', 'MISSIONS')->with('items')->first();
 
         return Inertia::render('Guest/Missions', props: compact('mission'));
-
     }
 
     public function team()
@@ -69,7 +65,6 @@ class GuestController extends Controller
         $section = Section::where('identifier', 'MEMBERS')->first();
 
         return Inertia::render('Guest/Team', props: compact('members', 'section'));
-
     }
 
     public function notices()

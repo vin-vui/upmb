@@ -46,20 +46,7 @@
                                 </span>
                             </div>
                         </a>
-                        <a :href="'mailto:' + email" target="_blank">
-                            <div class="mt-4 p-9 transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
-                                <p class="mb-4 font-heading text-base text-white text-opacity-70">Nous écrire</p>
-                                <h3 class="mb-8 font-heading font-bold text-white text-xl lg:text-3xl">{{ email }}</h3>
-                                <span class="font-heading font-averia text-white text-opacity-70 group-hover:text-opacity-100 tracking-tight text-xl font-semibold flex items-center gap-2 transition ease-out duration-1000">
-                                    <div class="size-6 bg-white group-hover:bg-opacity-100 bg-opacity-70 rounded-full flex items-center justify-center transition ease-out duration-1000 group-hover:translate-x-1">
-                                        <svg class="text-gray-900" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1L5.2825 1.6965L9.086 5.5H1V6.5H9.086L5.293 10.293L6 11L11 6L6 1Z" fill="currentColor"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="link link-primary link-animated">j'envoie un email</span>
-                                </span>
-                            </div>
-                        </a>
+
                         <div class="mt-4 p-9 transform hover:-translate-y-3 overflow-hidden bg-accent rounded-2xl transition ease-out duration-1000 hover:shadow-2xl hover:shadow-accent/50 group cursor-pointer">
                             <p class="mb-4 font-heading text-base text-white text-opacity-70">Nos horaires</p>
                             <h3 class="mb-8 font-heading font-bold text-white text-xl lg:text-3xl">{{ hours }}</h3>
@@ -83,7 +70,7 @@
                         </a>
                     </div>
                     <!-- DOC -->
-                    <div class="w-full md:w-1/2 p-5">
+                    <div class="w-full md:w-1/2 p-5" v-if="doc">
                         <a :href=doc download>
                             <div class="bordered-card group cursor-pointer">
                                 <div class="bg-white p-9 rounded-3xl">
@@ -131,7 +118,7 @@ const mapsLink = (address) => {
 };
 
 const address = computed(() => filterInformation("ADDRESS").replace(/, /g, '\n'));
-const email = computed(() => filterInformation("EMAIL"));
+
 const phone = computed(() => filterInformation("PHONE"));
 const bus_1 = computed(() => filterInformation("BUS_1"));
 const bus_2 = computed(() => filterInformation("BUS_2"));
